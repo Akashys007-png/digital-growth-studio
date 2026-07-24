@@ -1,1 +1,35 @@
-import PageHero from "@/components/page-hero";import Link from "next/link";import {caseStudies} from "@/data/site";export const metadata={title:"Portfolio",description:"Honest concept case studies for restaurant, dental, and salon websites."};export default function Page(){return <><PageHero eyebrow="Portfolio" title="Concept work that demonstrates our strategy, design, and development approach." copy="These projects are educational demonstrations, not completed paid client engagements."/><section className="section"><div className="container grid3">{caseStudies.map(c=><Link className={`card bg-gradient-to-br ${c.accent}`} href={`/portfolio/${c.slug}`} key={c.slug}><span className="badge">Concept Project</span><h2>{c.title}</h2><p>{c.summary}</p><strong>View case study →</strong></Link>)}</div></section></>}
+import type { Metadata } from "next";
+
+import { portfolioProjects } from "@/data/portfolioProjects";
+
+import PortfolioGrid from "@/components/shared/PortfolioGrid";
+import Section from "@/components/ui/Section";
+import SectionHeading from "@/components/ui/SectionHeading";
+import CTA from "@/components/sections/CTA";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description:
+    "Explore our portfolio of modern website concepts built for restaurants, healthcare, beauty, fitness, legal, and real estate businesses.",
+};
+
+export default function PortfolioPage() {
+  return (
+    <>
+      <Section className="portfolio-page-hero">
+        <SectionHeading
+          badge="Portfolio"
+          title="Projects That"
+          highlight="Deliver Results"
+          description="Explore our collection of website concepts designed to help businesses grow through thoughtful design, user experience, and modern technology."
+        />
+      </Section>
+
+      <Section>
+        <PortfolioGrid items={portfolioProjects} />
+      </Section>
+
+      <CTA />
+    </>
+  );
+}

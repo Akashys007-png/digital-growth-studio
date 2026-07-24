@@ -1,1 +1,91 @@
-import {notFound} from "next/navigation";import {services} from "@/data/site";import PageHero from "@/components/page-hero";import FAQ from "@/components/faq";import {ButtonLink,SectionHeading} from "@/components/ui";export function generateStaticParams(){return services.map(x=>({slug:x.slug}))}export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const s=services.find(x=>x.slug===slug);return {title:s?.title||"Service",description:s?.short}}export default async function Page({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const s=services.find(x=>x.slug===slug);if(!s)notFound();return <><PageHero eyebrow="Service" title={s.title} copy={s.short} crumbs={[{label:"Services",href:"/services"},{label:s.title}]}/><section className="section"><div className="container grid2"><div><SectionHeading eyebrow="The problem" title="Customers need a clear, dependable digital experience." copy={`Businesses considering ${s.title.toLowerCase()} often face fragmented tools, unclear information, or manual work that creates friction.`}/><h2>How we help</h2><p className="lead">We begin with your business goal, define the simplest useful solution, and document how the system should be managed after launch.</p></div><div className="card"><h3>Key features</h3><ul>{s.features.map(x=><li key={x} style={{margin:"12px 0"}}>{x}</li>)}</ul><h3>Who it is for</h3><p className="muted">Small and medium-sized businesses that need a professional, scalable solution without unnecessary complexity.</p></div></div></section><section className="section" style={{background:"white"}}><div className="container"><SectionHeading eyebrow="Benefits" title={s.benefit}/><div className="grid3">{["Clearer customer journey","Better maintainability","Room for future growth"].map(x=><div className="card" key={x}><h3>{x}</h3><p className="muted">Decisions are connected to practical business and customer needs.</p></div>)}</div></div></section><section className="section"><div className="container"><SectionHeading eyebrow="Process" title="Discovery, scope, design, implementation, testing, and support."/><FAQ items={[{q:`How is ${s.title.toLowerCase()} priced?`,a:"Pricing depends on content, integrations, complexity, and support needs. A written scope is prepared before work begins."},{q:"Can this be expanded later?",a:"Yes. We plan the foundation so useful features can be added without rebuilding everything unnecessarily."},{q:"Will training be provided?",a:"Where relevant, we provide practical documentation or walkthroughs for the tools you will manage."}]}/><p style={{marginTop:24}}><ButtonLink href="/consultation">Discuss This Service</ButtonLink></p></div></section></>}
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+import Hero from "@/components/service-detail/Hero";
+import { services, getServiceBySlug } from "@/data/services";
+import Features from "@/components/service-detail/Features";
+import Process from "@/components/service-detail/Process";
+import Technologies from "@/components/service-detail/Technologies";
+import Benefits from "@/components/service-detail/Benefits";
+import FeaturedProject from "@/components/service-detail/FeaturedProject";
+import ServiceFAQ from "@/components/service-detail/ServiceFAQ";
+import CTA from "@/components/service-detail/CTA";
+import RelatedServices from "@/components/service-detail/RelatedServices";
+interface ServicePageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export async function generateStaticParams() {
+  return services.map((service) => ({
+    slug: service.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: ServicePageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const service = getServiceBySlug(slug);
+
+  if (!service) {
+    return {
+      title: "Service Not Found",
+    };
+  }
+
+  return {
+    title: `${service.name} | Digital Growth Studio`,
+    description: service.description,
+  };
+}
+
+export default async function ServicePage({
+  params,
+}: ServicePageProps) {
+  const { slug } = await params;
+
+  const service = getServiceBySlug(slug);
+
+  if (!service) {
+    notFound();
+  }
+
+  return (
+    <main className="min-h-screen py-20">
+      <div className="container mx-auto px-6">
+        <span className="inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-700">
+          {service.badge}
+        </span>
+
+        <h1 className="mt-6 text-5xl font-bold">
+          {service.headline}{" "}
+          <span className="text-blue-600">
+            {service.highlight}
+          </span>
+        </h1>
+
+        <p className="mt-6 max-w-3xl text-lg text-gray-600">
+          {service.description}
+        </p>
+      </div>
+
+      <Hero service={service} />
+
+      <Features service={service} />
+
+      <Process service={service} />
+
+      <Technologies service={service} />
+
+      <Benefits service={service} />
+
+      <FeaturedProject service={service} />
+      <ServiceFAQ service={service} />
+      <CTA service={service} />
+      <RelatedServices service={service} />
+    </main>
+  );
+}

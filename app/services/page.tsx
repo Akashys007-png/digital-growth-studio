@@ -1,1 +1,44 @@
-import PageHero from "@/components/page-hero";import Link from "next/link";import {services} from "@/data/site";export const metadata={title:"Services",description:"Website, SEO, maintenance, AI, automation, CRM, and analytics services for small businesses."};export default function Page(){return <><PageHero eyebrow="Services" title="Digital services organized around real business needs." copy="Begin with a professional online presence and add tools only when they support a clear customer or operational goal."/><section className="section"><div className="container grid3">{services.map(s=><Link className="card" href={`/services/${s.slug}`} key={s.slug}><span className="badge">Service</span><h2>{s.title}</h2><p className="muted">{s.short}</p><strong>{s.benefit}</strong><p style={{color:"#2457ff",fontWeight:800}}>View service →</p></Link>)}</div></section></>}
+import type { Metadata } from "next";
+
+import ServicesHero from "@/components/services/ServicesHero";
+import ServicesOverview from "@/components/services/ServicesOverview";
+import FeaturedServices from "@/components/services/FeaturedServices";
+import ServiceProcess from "@/components/services/ServiceProcess";
+import ServiceBenefits from "@/components/services/ServiceBenefits";
+import FAQ from "@/components/sections/FAQ";
+import { servicesFaq } from "@/data/servicesFaq";
+import ServicesCTA from "@/components/services/ServicesCTA";
+import WhyChooseServices from "@/components/services/WhyChooseServices";
+import TechnologyStack from "@/components/services/TechnologyStack";
+import FeaturedProjects from "@/components/services/FeaturedProjects";
+import ServicesFAQ from "@/components/services/ServicesFAQ";
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Website development, SEO, AI automation, branding, analytics, CRM, and digital growth services for small businesses.",
+};
+
+export default function ServicesPage() {
+  return (
+    <>
+      <ServicesHero />
+      <ServicesOverview />
+      <FeaturedServices />
+      <WhyChooseServices />
+      <ServiceProcess />
+      <TechnologyStack />
+      <FeaturedProjects />
+      <ServicesFAQ />
+      <ServiceBenefits />
+      <FAQ
+       items={servicesFaq}
+       badge="Services FAQ"
+       title="Questions About"
+       highlight="Our Services"
+       description="Everything you need to know before starting your project."
+/>
+      <ServicesCTA />
+    </>
+  );
+}

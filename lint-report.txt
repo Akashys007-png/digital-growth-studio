@@ -1,0 +1,18 @@
+
+> digital-growth-studio@1.0.0 lint
+> eslint .
+
+
+C:\Projects\digital-growth-studio-pro\app\error.tsx
+  36:20  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Projects\digital-growth-studio-pro\components\contact\ContactHero.tsx
+  20:14  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  25:22  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  26:55  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+C:\Projects\digital-growth-studio-pro\components\portfolio\ProjectTimeline.tsx
+  17:43  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+✖ 5 problems (5 errors, 0 warnings)
+

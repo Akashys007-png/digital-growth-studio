@@ -1,1 +1,150 @@
-import {notFound} from "next/navigation";import {caseStudies} from "@/data/site";import PageHero from "@/components/page-hero";import {ButtonLink,SectionHeading} from "@/components/ui";export function generateStaticParams(){return caseStudies.map(x=>({slug:x.slug}))}export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const c=caseStudies.find(x=>x.slug===slug);return {title:c?.title||"Case Study",description:c?.summary}}export default async function Page({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const c=caseStudies.find(x=>x.slug===slug);if(!c)notFound();return <><PageHero eyebrow="Concept Project" title={c.title} copy={c.summary} crumbs={[{label:"Portfolio",href:"/portfolio"},{label:c.title}]}/><section className="section"><div className="container grid2"><div className="prose"><h2>Business challenge</h2><p>{c.challenge}</p><h2>Research and strategy</h2><p>The concept prioritizes the questions a customer would ask before contacting or visiting the business. Content hierarchy, mobile actions, and trust-building information were mapped before visual design.</p><h2>Design approach</h2><p>A distinctive but approachable visual system supports readability, clear calls to action, and a calm browsing experience.</p></div><div className={`card bg-gradient-to-br ${c.accent}`}><span className="badge">Concept Project</span><h3>Proposed sitemap</h3><p>Home · Services/Menu · About · FAQ · Contact/Booking</p><h3>Key features</h3><ul>{c.features.map(x=><li key={x}>{x}</li>)}</ul><h3>Technology</h3><p>{c.stack.join(" · ")}</p></div></div></section><section className="section" style={{background:"white"}}><div className="container"><SectionHeading eyebrow="Mobile experience" title="Fast access to the most important next action." copy="The concept emphasizes readable content, large touch targets, simple navigation, and responsive layouts."/><div className="grid3">{["Clear information","Direct action","Scalable foundation"].map(x=><div className="card" key={x}><h3>{x}</h3><p className="muted">Expected benefits are described without presenting invented performance results.</p></div>)}</div><p style={{marginTop:24}}><ButtonLink href="/consultation">Build a Similar Experience</ButtonLink></p></div></section></>}
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+import { portfolioProjects } from "@/data/portfolioProjects";
+
+import CTA from "@/components/sections/CTA";
+import Section from "@/components/ui/Section";
+import ProjectMetrics from "@/components/portfolio/ProjectMetrics";
+import ProjectNavigation from "@/components/portfolio/ProjectNavigation";
+import CaseStudyHero from "@/components/portfolio/CaseStudyHero";
+import ProjectSummary from "@/components/portfolio/ProjectSummary";
+import ProjectTimeline from "@/components/portfolio/ProjectTimeline";
+import ProjectShowcase from "@/components/portfolio/ProjectShowcase";
+import BrandPalette from "@/components/portfolio/BrandPalette";
+import BusinessImpact from "@/components/portfolio/BusinessImpact";
+import ProjectGallery from "@/components/portfolio/ProjectGallery";
+import BeforeAfter from "@/components/portfolio/BeforeAfter";
+import FadeIn from "@/components/ui/FadeIn";
+import ProjectTestimonial from "@/components/portfolio/ProjectTestimonial";
+import ReadingProgress from "@/components/portfolio/ui/ReadingProgress";
+import ScrollToTop from "@/components/ui/ScrollToTop";
+interface PortfolioPageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export async function generateStaticParams() {
+  return portfolioProjects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: PortfolioPageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const project = portfolioProjects.find(
+    (item) => item.slug === slug
+  );
+
+  if (!project) {
+    return {
+      title: "Project Not Found",
+    };
+  }
+
+  return {
+    title: project.title,
+    description: project.description,
+  };
+}
+
+export default async function PortfolioCaseStudyPage({
+  params,
+}: PortfolioPageProps) {
+  const { slug } = await params;
+
+  const project = portfolioProjects.find(
+    (item) => item.slug === slug
+  );
+
+  if (!project) {
+    notFound();
+  }
+
+  return (
+    <>
+      <ReadingProgress />
+
+      <CaseStudyHero project={project} />
+
+      <ProjectSummary project={project} />
+
+      <FadeIn delay={0.1}>
+       <ProjectShowcase project={project} />
+      </FadeIn>
+
+      <ProjectGallery project={project} />
+
+      <FadeIn delay={0.2}>
+  <BeforeAfter project={project} />
+</FadeIn>
+
+     <FadeIn>
+      <BrandPalette project={project} />
+     </FadeIn>
+
+     <FadeIn delay={0.5}>
+  <ProjectTestimonial project={project} />
+</FadeIn>
+      <FadeIn delay={0.3}>
+  <ProjectMetrics metrics={project.metrics} />
+</FadeIn>
+
+      <FadeIn delay={0.4}>
+  <BusinessImpact project={project} />
+</FadeIn>
+
+      <FadeIn delay={0.5}>
+  <ProjectTimeline timeline={project.timeline} />
+</FadeIn>
+
+      <Section>
+        <div className="case-study-content">
+          <div className="case-study-block">
+            <h2>Project Overview</h2>
+            <p>{project.overview}</p>
+          </div>
+
+          <div className="case-study-block">
+            <h2>The Challenge</h2>
+            <p>{project.challenge}</p>
+          </div>
+
+          <div className="case-study-block">
+            <h2>Our Solution</h2>
+            <p>{project.solution}</p>
+          </div>
+
+          <div className="case-study-block">
+            <h2>Key Results</h2>
+
+            <ul>
+              {project.results.map((result) => (
+                <li key={result}>{result}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="case-study-block">
+            <h2>Technologies Used</h2>
+
+            <div className="case-study-tags">
+              {project.technologies.map((tech) => (
+                <span key={tech}>{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <ProjectNavigation currentSlug={project.slug} />
+
+      <CTA />
+      <ScrollToTop />
+    </>
+  );
+}

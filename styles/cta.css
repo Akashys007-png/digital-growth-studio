@@ -1,0 +1,134 @@
+.cta {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e3a8a 100%
+  );
+  color: #ffffff;
+}
+
+.cta-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.cta-content .section-badge {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+.cta-content h2 {
+  margin: 1rem 0;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.cta-content h2 span {
+  display: block;
+  color: #93c5fd;
+}
+
+.cta-content p {
+  max-width: 620px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.cta-primary,
+.cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  padding: 1rem 1.75rem;
+  border-radius: 14px;
+  font-weight: 600;
+  transition: all .3s ease;
+}
+
+.cta-primary {
+  background: #ffffff;
+  color: var(--primary-color);
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(255,255,255,.18);
+}
+
+.cta-secondary {
+  border: 1px solid rgba(255,255,255,.25);
+  color: #ffffff;
+}
+
+.cta-secondary:hover {
+  background: rgba(255,255,255,.08);
+}
+
+.cta-card {
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 24px;
+  padding: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-item + .contact-item {
+  margin-top: 1.75rem;
+}
+
+.contact-item svg {
+  color: #93c5fd;
+  flex-shrink: 0;
+  margin-top: .2rem;
+}
+
+.contact-item strong {
+  display: block;
+  margin-bottom: .3rem;
+  color: #ffffff;
+}
+
+.contact-item span {
+  display: block;
+  color: rgba(255,255,255,.8);
+  word-break: break-word;
+}
+
+@media (max-width: 992px) {
+  .cta-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-card {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+  }
+}

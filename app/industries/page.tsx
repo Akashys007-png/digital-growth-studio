@@ -1,1 +1,59 @@
-import PageHero from "@/components/page-hero";import Link from "next/link";import {industries} from "@/data/site";export const metadata={title:"Industries",description:"Digital solutions for restaurants, retail, healthcare, salons, fitness, real estate, professional services, and home services."};export default function Page(){return <><PageHero eyebrow="Industries" title="Industry-aware websites without a one-size-fits-all template." copy="The customer journey is different for a restaurant, dental office, contractor, or consultant. Our planning reflects those differences."/><section className="section"><div className="container grid3">{industries.map(i=><Link className="card" href={`/industries/${i.slug}`} key={i.slug}><h2>{i.title}</h2><p className="muted">{i.pain}</p><strong>Explore recommendations →</strong></Link>)}</div></section></>}
+import type { Metadata } from "next";
+
+import { industries } from "@/data/site";
+import { servicesFaq } from "@/data/servicesFaq";
+
+import IndustriesHero from "@/components/industries/IndustriesHero";
+import IndustriesGrid from "@/components/shared/IndustriesGrid";
+import FAQ from "@/components/sections/FAQ";
+import CTA from "@/components/sections/CTA";
+import Section from "@/components/ui/Section";
+import SectionHeading from "@/components/ui/SectionHeading";
+import IndustryBenefits from "@/components/industries/IndustryBenefits";
+import IndustriesOverview from "@/components/industries/IndustriesOverview";
+import IndustryProjects from "@/components/industries/IndustryProjects";
+import IndustriesFAQ from "@/components/industries/IndustriesFAQ";
+import IndustriesCTA from "@/components/industries/IndustriesCTA";
+
+
+export const metadata: Metadata = {
+  title: "Industries",
+  description:
+    "Digital solutions tailored for restaurants, healthcare, retail, fitness, real estate, contractors, and professional services.",
+};
+
+export default function IndustriesPage() {
+  return (
+    <>
+      <IndustriesHero />
+      <IndustriesOverview />
+
+      <Section>
+        <SectionHeading
+          badge="Industries"
+          title="Industries We"
+          highlight="Serve"
+          description="Every industry has unique challenges. We create digital experiences designed around your customers, workflows, and business goals."
+        />
+
+        <IndustriesGrid items={industries} />
+      </Section>
+      
+      <IndustryBenefits />
+      <IndustryProjects />
+      <IndustriesFAQ />
+      <IndustriesCTA />
+
+
+      <FAQ
+        items={servicesFaq}
+        badge="Industries FAQ"
+        title="Frequently Asked"
+        highlight="Questions"
+        description="Common questions about working with Digital Growth Studio."
+      />
+
+      <CTA />
+    </>
+  );
+}

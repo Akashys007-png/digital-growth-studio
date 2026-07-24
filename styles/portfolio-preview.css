@@ -1,0 +1,325 @@
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 190px;
+}
+
+.preview-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preview-logo {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2457ff, #0f9d8a);
+  color: #ffffff;
+}
+
+.preview-nav-links {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.preview-nav-links span {
+  width: 28px;
+  height: 6px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.preview-hero {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 0.75rem;
+  min-height: 78px;
+  padding: 0.75rem;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+}
+
+.preview-hero-image {
+  border-radius: 10px;
+  background: linear-gradient(135deg, #fb923c, #9a3412);
+}
+
+.preview-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.preview-hero-text span {
+  height: 7px;
+  border-radius: 999px;
+  background: #c2410c;
+}
+
+.preview-hero-text span:last-child {
+  width: 70%;
+  background: #fdba74;
+}
+
+.preview-button {
+  height: 28px;
+  border-radius: 8px;
+  background: #2457ff;
+}
+
+.preview-button-small {
+  width: 75px;
+}
+
+.preview-button-medium {
+  width: 105px;
+}
+
+.preview-button-large {
+  width: 145px;
+}
+
+.restaurant-preview-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.preview-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.preview-rating-stars {
+  display: flex;
+  gap: 0.15rem;
+}
+
+.preview-rating-stars span {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: #f59e0b;
+}
+
+.preview-rating-line {
+  width: 45px;
+  height: 5px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.restaurant-preview-section-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.restaurant-preview-section-heading span:first-child {
+  width: 95px;
+  height: 8px;
+  border-radius: 999px;
+  background: #0f172a;
+}
+
+.restaurant-preview-section-heading span:last-child {
+  width: 145px;
+  height: 5px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.restaurant-preview-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.mini-preview-card {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.mini-preview-card-image {
+  height: 28px;
+  background: linear-gradient(135deg, #fdba74, #ea580c);
+}
+
+.mini-preview-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.45rem;
+}
+
+.mini-preview-card-title {
+  width: 78%;
+  height: 5px;
+  border-radius: 999px;
+  background: #334155;
+}
+
+.mini-preview-card-text {
+  width: 55%;
+  height: 4px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+
+.preview-avatar {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.preview-avatar-image {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #bae6fd, #0284c7);
+}
+
+.preview-avatar-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.preview-avatar-name {
+  width: 80px;
+  height: 7px;
+  border-radius: 999px;
+  background: #0f172a;
+}
+
+.preview-avatar-role {
+  width: 55px;
+  height: 5px;
+  border-radius: 999px;
+  background: #cbd5e1;
+}
+/* ========================================
+   DENTAL PREVIEW
+======================================== */
+
+.dental-preview{
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+}
+
+.dental-preview-hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:.75rem;
+
+    border-radius:12px;
+
+    background:#f8fbff;
+}
+
+.dental-preview-services{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:.55rem;
+}
+.mini-preview-card-compact{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    min-height:48px;
+}
+/* ========================================
+   SALON PREVIEW
+======================================== */
+
+.salon-preview{
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+}
+
+.salon-preview-actions{
+    display:flex;
+    justify-content:flex-start;
+}
+
+.salon-preview-services{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:.45rem;
+}
+/* ========================================
+   REAL ESTATE PREVIEW
+======================================== */
+
+.realestate-preview{
+    display:flex;
+    flex-direction:column;
+    gap:.8rem;
+}
+
+.realestate-preview-grid{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:.5rem;
+}
+/* ========================================
+   LAW PREVIEW
+======================================== */
+
+.law-preview{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.9rem;
+}
+/* ========================================
+   FITNESS PREVIEW
+======================================== */
+
+.fitness-preview{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:.8rem;
+}
+
+.fitness-preview-cards{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:.5rem;
+}

@@ -1,1 +1,97 @@
-import {notFound} from "next/navigation";import {posts} from "@/data/site";import PageHero from "@/components/page-hero";import {ButtonLink} from "@/components/ui";export function generateStaticParams(){return posts.map(x=>({slug:x.slug}))}export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=posts.find(x=>x.slug===slug);return {title:p?.title||"Resource",description:p?.excerpt}}export default async function Page({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const p=posts.find(x=>x.slug===slug);if(!p)notFound();return <><PageHero eyebrow="Resource" title={p.title} copy={p.excerpt} crumbs={[{label:"Resources",href:"/resources"},{label:p.title}]}/><article className="section"><div className="container legal prose"><p>A professional digital presence gives a business a reliable place to explain what it does, answer customer questions, and provide a clear next step. The right approach depends on the business model, customer journey, and internal capacity.</p><h2>Start with the customer decision</h2><p>Organize content around the information people need before they call, book, visit, or purchase. This often includes services, location, pricing context, trust information, availability, and contact options.</p><h2>Keep the system manageable</h2><p>A website is useful only when it stays accurate. Choose a platform, content structure, and maintenance plan that the business can realistically support.</p><h2>Measure useful actions</h2><p>Track inquiries, bookings, calls, and other meaningful actions rather than focusing only on page views.</p><ButtonLink href="/consultation">Discuss Your Digital Presence</ButtonLink></div></article></>}
+import { notFound } from "next/navigation";
+import { posts } from "@/data/site";
+import PageHero from "@/components/page-hero";
+import { ButtonLink } from "@/components/ui";
+import RelatedArticles from "@/components/blog/RelatedArticles";
+
+export function generateStaticParams() {
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const post = posts.find((item) => item.slug === slug);
+
+  return {
+    title: post?.title || "Resource",
+    description: post?.excerpt,
+  };
+}
+
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const post = posts.find((item) => item.slug === slug);
+
+  if (!post) {
+    notFound();
+  }
+
+  const relatedPosts = posts
+  .filter((item) => item.slug !== post.slug)
+  .slice(0, 3);
+
+  return (
+    <>
+      <PageHero
+        eyebrow="Resource"
+        title={post.title}
+        copy={post.excerpt}
+        crumbs={[
+          {
+            label: "Resources",
+            href: "/resources",
+          },
+          {
+            label: post.title,
+          },
+        ]}
+      />
+
+      <article className="section">
+        <div className="container legal prose">
+
+          <div className="resource-meta">
+            <span>{post.category}</span>
+
+            <span>•</span>
+
+            <span>{post.author}</span>
+
+            <span>•</span>
+
+            <span>{post.readingTime}</span>
+
+            <span>•</span>
+
+            <span>{post.date}</span>
+          </div>
+
+          {post.content.map((paragraph, index) => (
+            <p key={`${post.slug}-${index}`}>
+              {paragraph}
+            </p>
+          ))}
+
+          <ButtonLink href="/consultation">
+            Discuss Your Digital Presence
+          </ButtonLink>
+
+        </div>
+      </article>
+
+      <RelatedArticles posts={relatedPosts} />
+    </>
+  );
+}

@@ -1,1 +1,89 @@
-import {notFound} from "next/navigation";import {industries} from "@/data/site";import PageHero from "@/components/page-hero";import {ButtonLink,SectionHeading} from "@/components/ui";export function generateStaticParams(){return industries.map(x=>({slug:x.slug}))}export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const x=industries.find(i=>i.slug===slug);return {title:x?.title||"Industry",description:x?.pain}}export default async function Page({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const x=industries.find(i=>i.slug===slug);if(!x)notFound();return <><PageHero eyebrow="Industry solutions" title={x.title} copy={x.pain} crumbs={[{label:"Industries",href:"/industries"},{label:x.title}]}/><section className="section"><div className="container"><SectionHeading eyebrow="Recommended features" title="A digital experience shaped around the questions customers ask first."/><div className="grid3">{x.features.map(f=><div className="card" key={f}><h3>{f}</h3><p className="muted">Designed to reduce uncertainty and create a clearer next step.</p></div>)}</div></div></section><section className="section" style={{background:"white"}}><div className="container grid2"><div><h2 className="title">Digital-growth opportunities</h2><p className="lead">Combine clear content, mobile usability, local search foundations, and dependable lead capture. Add automation or analytics when it supports an established workflow.</p></div><div className="card"><h3>Suggested services</h3><ul><li>Website development or redesign</li><li>Local SEO foundation</li><li>Maintenance and performance support</li><li>CRM or booking integration when needed</li></ul><ButtonLink href="/consultation">Plan Your Website</ButtonLink></div></div></section></>}
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+
+import {
+  industries,
+  getIndustryBySlug,
+} from "@/data/industries";
+
+import IndustryPageHero from "@/components/industries/IndustryPageHero";
+import IndustryChallenges from "@/components/industries/IndustryChallenges";
+import IndustrySolutions from "@/components/industries/IndustrySolutions";
+import IndustryProject from "@/components/industries/IndustryProject";
+import IndustryPageFAQ from "@/components/industries/IndustryPageFAQ";
+import IndustryPageCTA from "@/components/industries/IndustryPageCTA";
+
+interface IndustryPageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export async function generateStaticParams() {
+  return industries.map((industry) => ({
+    slug: industry.slug,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: IndustryPageProps): Promise<Metadata> {
+  const { slug } = await params;
+
+  const industry = getIndustryBySlug(slug);
+
+  if (!industry) {
+    return {
+      title: "Industry Not Found",
+    };
+  }
+
+  return {
+    title: `${industry.name} | Digital Growth Studio`,
+    description: industry.description,
+  };
+}
+
+export default async function IndustryPage({
+  params,
+}: IndustryPageProps) {
+  const { slug } = await params;
+
+  const industry = getIndustryBySlug(slug);
+
+  if (!industry) {
+    notFound();
+  }
+
+  return (
+    <>
+      <IndustryPageHero
+        badge={industry.badge}
+        headline={industry.headline}
+        highlight={industry.highlight}
+        description={industry.description}
+      />
+
+      <IndustryChallenges
+        challenges={industry.challenges}
+      />
+
+      <IndustrySolutions
+        solutions={industry.solutions}
+      />
+
+      <IndustryProject
+        project={industry.project}
+      />
+
+      <IndustryPageFAQ
+        faqs={industry.faqs}
+      />
+
+      <IndustryPageCTA
+        title={industry.ctaTitle}
+        description={industry.ctaDescription}
+      />
+    </>
+  );
+}

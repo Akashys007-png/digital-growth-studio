@@ -1,1 +1,24 @@
-import PageHero from "@/components/page-hero";import Link from "next/link";import {posts} from "@/data/site";export const metadata={title:"Resources",description:"Practical website, SEO, AI, and digital-growth guidance for small businesses."};export default function Page(){return <><PageHero eyebrow="Resources" title="Practical guidance for business owners making digital decisions." copy="Clear explanations without unnecessary technical language."/><section className="section"><div className="container grid3">{posts.map(p=><Link className="card" href={`/resources/${p.slug}`} key={p.slug}><span className="badge">{p.date}</span><h2>{p.title}</h2><p className="muted">{p.excerpt}</p><strong>Read article →</strong></Link>)}</div></section></>}
+import Section from "@/components/ui/Section";
+import { blogPosts } from "@/data/blogPosts";
+import ResourcesContent from "@/components/blog/ResourcesContent";
+
+export default function ResourcesPage() {
+  return (
+    <Section>
+      <div className="resources-hero">
+        <span>Resources</span>
+
+        <h1>
+          Insights, guides, and digital growth strategies
+        </h1>
+
+        <p>
+          Explore practical articles covering web design,
+          SEO, performance, branding, and technology.
+        </p>
+      </div>
+
+      <ResourcesContent posts={blogPosts} />
+    </Section>
+  );
+}

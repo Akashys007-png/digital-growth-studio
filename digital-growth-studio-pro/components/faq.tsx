@@ -1,3 +1,0 @@
-"use client";import {useState} from "react";import {ChevronDown} from "lucide-react";
-export default function FAQ({items}:{items:{q:string,a:string}[]}){return <div className="faq card">{items.map((x,i)=><FAQItem key={x.q} {...x} first={i===0}/>)}</div>}
-function FAQItem({q,a,first}:{q:string,a:string;first:boolean}){const [open,setOpen]=useState(first);return <div style={{borderBottom:"1px solid #e2e8f0"}}><button onClick={()=>setOpen(!open)} aria-expanded={open}>{q}<ChevronDown style={{transform:open?"rotate(180deg)":"none",transition:".2s"}}/></button>{open&&<div className="faq-content">{a}</div>}</div>}
