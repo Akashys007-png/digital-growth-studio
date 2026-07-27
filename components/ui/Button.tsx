@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -22,13 +23,37 @@ export default function Button({
   className = "",
 }: ButtonProps) {
   return (
-    <Link
-      href={href}
-      className={`btn btn-${variant} ${className}`}
+    <motion.div
+      whileHover={{
+        y: -2,
+      }}
+      whileTap={{
+        scale: 0.98,
+      }}
+      transition={{
+        duration: 0.18,
+      }}
     >
-      {children}
+      <Link
+        href={href}
+        className={`btn btn-${variant} ${className}`}
+      >
+        <span>{children}</span>
 
-      {icon && <ArrowRight size={18} />}
-    </Link>
+        {icon && (
+          <motion.span
+            className="btn-icon"
+            whileHover={{
+              x: 4,
+            }}
+            transition={{
+              duration: 0.18,
+            }}
+          >
+            <ArrowRight size={18} />
+          </motion.span>
+        )}
+      </Link>
+    </motion.div>
   );
 }

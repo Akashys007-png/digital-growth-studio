@@ -6,8 +6,14 @@ interface SectionProps {
   children: ReactNode;
   id?: string;
   className?: string;
-  spacing?: "normal" | "large";
+  spacing?: "compact" | "normal" | "large";
 }
+
+const spacingMap = {
+  compact: "py-16 lg:py-20",
+  normal: "py-20 lg:py-28",
+  large: "py-28 lg:py-36",
+};
 
 export default function Section({
   children,
@@ -15,15 +21,10 @@ export default function Section({
   className = "",
   spacing = "normal",
 }: SectionProps) {
-  const spacingClasses =
-    spacing === "large"
-      ? "py-28 lg:py-36"
-      : "py-20 lg:py-28";
-
   return (
     <section
       id={id}
-      className={`${spacingClasses} ${className}`}
+      className={`${spacingMap[spacing]} ${className}`}
     >
       <Container>{children}</Container>
     </section>

@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+
+import Reveal from "@/components/motion/Reveal";
+import StaggerContainer from "@/components/motion/StaggerContainer";
+import StaggerItem from "@/components/motion/StaggerItem";
+
 import SectionHeading from "@/components/ui/SectionHeading";
+
 import {
   ArrowUpRight,
   Bot,
@@ -54,42 +60,43 @@ export default function WhyChooseUs() {
   return (
     <section className="why-section">
       <div className="container">
-        <SectionHeading
-  badge="Why Choose Us"
-  title="More Than"
-  highlight="Just a Website"
-  description="We combine strategy, technology, and ongoing support to help your business grow long after your website goes live."
-/>
+        <Reveal>
+          <SectionHeading
+            badge="Why Choose Us"
+            title="More Than"
+            highlight="Just a Website"
+            description="We combine strategy, technology, and ongoing support to help your business grow long after your website goes live."
+          />
+        </Reveal>
 
-        <div className="why-grid">
-          {reasons.map((item, index) => {
+        <StaggerContainer className="why-grid">
+          {reasons.map((item) => {
             const Icon = item.icon;
 
             return (
-              <motion.div
-                key={item.title}
-                className="why-card"
-                initial={{ opacity: 0, y: 35 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.08,
-                }}
-                whileHover={{
-                  y: -8,
-                }}
-              >
-                <div className="why-icon">
-                  <Icon size={28} />
-                </div>
+              <StaggerItem key={item.title}>
+                <motion.div
+                  className="why-card"
+                  whileHover={{
+                    y: -8,
+                    scale: 1.015,
+                    transition: {
+                      duration: 0.22,
+                    },
+                  }}
+                >
+                  <div className="why-icon">
+                    <Icon size={28} />
+                  </div>
 
-                <h3>{item.title}</h3>
+                  <h3>{item.title}</h3>
 
-                <p>{item.description}</p>
-              </motion.div>
+                  <p>{item.description}</p>
+                </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

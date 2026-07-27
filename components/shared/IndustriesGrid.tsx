@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 
+import StaggerContainer from "@/components/motion/StaggerContainer";
+import StaggerItem from "@/components/motion/StaggerItem";
+
 import {
   ArrowRight,
   UtensilsCrossed,
@@ -60,40 +63,42 @@ export default function IndustriesGrid({
   const visibleItems = limit ? items.slice(0, limit) : items;
 
   return (
-    <div className="industries-grid">
-      {visibleItems.map((industry, index) => {
+    <StaggerContainer className="industries-grid">
+      {visibleItems.map((industry) => {
         const Icon = icons[industry.icon];
 
         return (
-          <motion.div
-            key={industry.slug}
-            initial={{ opacity: 0, y: 35 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              delay: index * 0.06,
-            }}
-          >
-            <Card className="industry-card">
-              <div className="industry-icon">
-                <Icon size={26} />
-              </div>
+          <StaggerItem key={industry.slug}>
+            <motion.div
+              whileHover={{
+                y: -8,
+                scale: 1.015,
+                transition: {
+                  duration: 0.22,
+                },
+              }}
+            >
+              <Card className="industry-card">
+                <div className="industry-icon">
+                  <Icon size={26} />
+                </div>
 
-              <h3>{industry.title}</h3>
+                <h3>{industry.title}</h3>
 
-              <p>{industry.description}</p>
+                <p>{industry.description}</p>
 
-              <Link
-                href={industry.href}
-                className="industry-link"
-              >
-                Learn More
-                <ArrowRight size={17} />
-              </Link>
-            </Card>
-          </motion.div>
+                <Link
+                  href={industry.href}
+                  className="industry-link"
+                >
+                  Learn More
+                  <ArrowRight size={17} />
+                </Link>
+              </Card>
+            </motion.div>
+          </StaggerItem>
         );
       })}
-    </div>
+    </StaggerContainer>
   );
 }

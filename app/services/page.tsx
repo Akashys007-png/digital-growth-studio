@@ -15,8 +15,31 @@ import ServicesFAQ from "@/components/services/ServicesFAQ";
 
 export const metadata: Metadata = {
   title: "Services",
+
   description:
-    "Website development, SEO, AI automation, branding, analytics, CRM, and digital growth services for small businesses.",
+    "Explore our website development, branding, SEO, AI automation, analytics, and digital growth services for small businesses.",
+
+  openGraph: {
+    title: "Our Services | Digital Growth Studio",
+    description:
+      "Professional digital services designed to help small businesses grow online.",
+    images: [
+      {
+        url: "/images/og/services.png",
+        width: 1200,
+        height: 630,
+        alt: "Digital Growth Studio Services",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Services | Digital Growth Studio",
+    description:
+      "Professional digital services designed to help small businesses grow online.",
+    images: ["/images/og/services.png"],
+  },
 };
 
 export default function ServicesPage() {

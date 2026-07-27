@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
+
+import Reveal from "@/components/motion/Reveal";
+import StaggerContainer from "@/components/motion/StaggerContainer";
+import StaggerItem from "@/components/motion/StaggerItem";
+
 import SectionHeading from "@/components/ui/SectionHeading";
+
 import {
   Search,
   ClipboardCheck,
@@ -54,43 +60,47 @@ export default function Process() {
   return (
     <section className="process-section">
       <div className="container">
-        <SectionHeading
-  badge="Process"
-  title="A Proven Process"
-  highlight="From Idea to Launch"
-  description="We follow a structured approach that keeps every project transparent, efficient, and focused on delivering measurable business results."
-/>
+        <Reveal>
+          <SectionHeading
+            badge="Process"
+            title="A Proven Process"
+            highlight="From Idea to Launch"
+            description="We follow a structured approach that keeps every project transparent, efficient, and focused on delivering measurable business results."
+          />
+        </Reveal>
 
-        <div className="timeline">
+        <StaggerContainer className="timeline">
           {processSteps.map((step, index) => {
             const Icon = step.icon;
 
             return (
-              <motion.div
-                key={step.title}
-                className="timeline-item"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  delay: index * 0.08,
-                }}
-              >
-                <div className="timeline-icon">
-                  <Icon size={28} />
-                </div>
+              <StaggerItem key={step.title}>
+                <motion.div
+                  className="timeline-item"
+                  whileHover={{
+                    y: -6,
+                    scale: 1.01,
+                    transition: {
+                      duration: 0.22,
+                    },
+                  }}
+                >
+                  <div className="timeline-icon">
+                    <Icon size={28} />
+                  </div>
 
-                <div className="timeline-content">
-                  <h3>
-                    {index + 1}. {step.title}
-                  </h3>
+                  <div className="timeline-content">
+                    <h3>
+                      {index + 1}. {step.title}
+                    </h3>
 
-                  <p>{step.description}</p>
-                </div>
-              </motion.div>
+                    <p>{step.description}</p>
+                  </div>
+                </motion.div>
+              </StaggerItem>
             );
           })}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

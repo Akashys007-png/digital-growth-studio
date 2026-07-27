@@ -2,9 +2,11 @@ import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
-
+import PageTransition from "@/components/layout/PageTransition";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import ScrollProgress from "@/components/layout/ScrollProgress";
+import ThemeProvider from "@/components/providers/ThemeProvider";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -77,14 +79,14 @@ export const metadata: Metadata = {
     siteName: "Digital Growth Studio",
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/images/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Digital Growth Studio — Digital growth solutions for small businesses",
-      },
-    ],
+   images: [
+  {
+    url: "/images/og/home.png",
+    width: 1200,
+    height: 630,
+    alt: "Digital Growth Studio — Helping Small Businesses Grow Through Technology",
+  },
+],
   },
 
   twitter: {
@@ -92,7 +94,7 @@ export const metadata: Metadata = {
     title: "Digital Growth Studio | Digital Growth for Small Businesses",
     description:
       "Helping small businesses grow through professional websites, SEO, AI automation, branding, analytics, and modern digital technology.",
-    images: ["/images/og-image.jpg"],
+    images: ["/images/og/home.png"],
   },
 
   icons: {
@@ -142,17 +144,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <a className="skip" href="#main">
-          Skip to content
-        </a>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+        >
+          <ScrollProgress />
 
-        <Header />
+          <a className="skip" href="#main">
+            Skip to content
+          </a>
 
-        <main id="main">{children}</main>
+          <Header />
 
-        <Footer />
+          <main id="main">
+  <PageTransition>
+    {children}
+  </PageTransition>
+</main>
+
+          <Footer />
+        </ThemeProvider>
 
         <Script
           id="organization-schema"
@@ -162,6 +176,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationSchema),
           }}
         />
+
         <GoogleAnalytics gaId="G-W7919KGR4W" />
       </body>
     </html>

@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import Reveal from "@/components/motion/Reveal";
+import StaggerContainer from "@/components/motion/StaggerContainer";
+import StaggerItem from "@/components/motion/StaggerItem";
 import SectionHeading from "@/components/ui/SectionHeading";
 
 import { fadeUp } from "@/constants/animations";
@@ -64,35 +67,31 @@ export default function Services() {
   return (
   <section className="services-section">
     
-      <SectionHeading
-        badge="Services"
-        title="Everything Your Business Needs"
-        highlight="To Grow Online"
-        description="From high-converting websites to automation and SEO, we build digital solutions that help small businesses attract customers and grow."
-      />
+      <Reveal>
+  <SectionHeading
+    badge="Services"
+    title="Everything Your Business Needs"
+    highlight="To Grow Online"
+    description="From high-converting websites to automation and SEO, we build digital solutions that help small businesses attract customers and grow."
+  />
+</Reveal>
 
-      <div className="services-grid">
-        {services.map((service, index) => {
+      <StaggerContainer className="services-grid">
+        {services.map((service) => {
           const Icon = service.icon;
 
           return (
-            <motion.article
-              key={service.title}
-              className="service-card"
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
-              whileHover={{
-                y: -10,
-                transition: {
-                  duration: 0.2,
-                },
-              }}
-            >
+            <StaggerItem key={service.title}>
+  <motion.article
+    className="service-card"
+    whileHover={{
+      y: -8,
+      scale: 1.015,
+      transition: {
+        duration: 0.22,
+      },
+    }}
+>
               <div className="service-icon">
                 <Icon size={26} strokeWidth={2} />
               </div>
@@ -105,24 +104,20 @@ export default function Services() {
                 Learn More
                 <ArrowRight size={17} />
               </Link>
-            </motion.article>
+              </motion.article>
+</StaggerItem>
           );
         })}
-      </div>
+      </StaggerContainer>
 
-      <motion.div
-        className="services-footer"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
+      <Reveal delay={0.25}>
+  <div className="services-footer">
         <Link href="/services" className="btn btn-outline">
           Explore All Services
           <ArrowRight size={18} />
         </Link>
-      </motion.div>
+        </div>
+</Reveal>
     
   </section>
 );

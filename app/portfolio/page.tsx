@@ -9,8 +9,31 @@ import CTA from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
   title: "Portfolio",
+
   description:
-    "Explore our portfolio of modern website concepts built for restaurants, healthcare, beauty, fitness, legal, and real estate businesses.",
+    "Explore our portfolio of websites, branding projects, digital experiences, and business growth solutions.",
+
+  openGraph: {
+    title: "Portfolio | Digital Growth Studio",
+    description:
+      "See how we've helped businesses transform their online presence with modern digital solutions.",
+    images: [
+      {
+        url: "/images/og/portfolio.png",
+        width: 1200,
+        height: 630,
+        alt: "Digital Growth Studio Portfolio",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Portfolio | Digital Growth Studio",
+    description:
+      "See how we've helped businesses transform their online presence with modern digital solutions.",
+    images: ["/images/og/portfolio.png"],
+  },
 };
 
 export default function PortfolioPage() {
