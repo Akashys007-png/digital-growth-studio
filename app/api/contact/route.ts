@@ -4,7 +4,7 @@ import { z } from "zod";
 const schema = z.object({
   name: z.string().min(2),
   business: z.string().min(2),
-  email: z.email(),
+  email: z.string().email(),
   phone: z.string().optional(),
   industry: z.string(),
   website: z.string().optional(),
@@ -43,10 +43,28 @@ export async function POST(req: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Website <onboarding@resend.dev>",
+        from: "Digital Growth Studio <hello@digitalgrowth.studio>",
         to: [process.env.CONTACT_TO_EMAIL],
+        reply_to: data.email,
         subject: `New inquiry from ${data.business}`,
-        text: JSON.stringify(data, null, 2),
+        text: `
+New Project Inquiry
+
+Full Name: ${data.name}
+Business: ${data.business}
+Email: ${data.email}
+Phone: ${data.phone || "Not provided"}
+
+Industry: ${data.industry}
+Website: ${data.website || "Not provided"}
+
+Service: ${data.services}
+Budget: ${data.budget}
+Timeline: ${data.timeline}
+
+Project Details:
+${data.details}
+`,
       }),
     });
 
