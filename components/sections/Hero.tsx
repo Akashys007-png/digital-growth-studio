@@ -1,6 +1,14 @@
 "use client";
 
-import { CheckCircle2, Sparkles } from "lucide-react";
+import {
+  CheckCircle2,
+  Sparkles,
+  ArrowUpRight,
+  Users,
+  Target,
+  TrendingUp,
+  Bell,
+} from "lucide-react";
 import Button from "@/components/ui/Button";
 import { motion } from "motion/react";
 
@@ -93,6 +101,7 @@ export default function Hero() {
               </div>
 
               <span className="dashboard-status">
+                <span className="dashboard-status-dot" />
                 Example
               </span>
             </div>
@@ -102,10 +111,28 @@ export default function Hero() {
 
               <strong>24,850</strong>
 
-              <span>+38.4% this month</span>
+              <span>
+                <ArrowUpRight size={14} strokeWidth={2.5} />
+                +38.4% this month
+              </span>
             </div>
 
             <div className="dashboard-chart">
+              <svg
+                className="dashboard-chart-trend"
+                viewBox="0 0 280 100"
+                preserveAspectRatio="none"
+              >
+                <polyline
+                  points="10,65 50,48 90,56 130,33 170,42 210,18 260,4"
+                  fill="none"
+                  stroke="#0f9d8a"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+
               <div style={{ height: "35%" }} />
               <div style={{ height: "52%" }} />
               <div style={{ height: "44%" }} />
@@ -116,17 +143,26 @@ export default function Hero() {
             </div>
 
             <div className="dashboard-grid">
-              <div>
+              <div className="dashboard-grid-item dashboard-grid-item-blue">
+                <div className="dashboard-grid-icon">
+                  <Users size={16} strokeWidth={2} />
+                </div>
                 <span>Leads Generated</span>
                 <strong>428</strong>
               </div>
 
-              <div>
+              <div className="dashboard-grid-item dashboard-grid-item-teal">
+                <div className="dashboard-grid-icon">
+                  <Target size={16} strokeWidth={2} />
+                </div>
                 <span>Conversion Rate</span>
                 <strong>12.8%</strong>
               </div>
 
-              <div>
+              <div className="dashboard-grid-item dashboard-grid-item-orange">
+                <div className="dashboard-grid-icon">
+                  <TrendingUp size={16} strokeWidth={2} />
+                </div>
                 <span>Search Growth</span>
                 <strong>+64%</strong>
               </div>
@@ -134,13 +170,23 @@ export default function Hero() {
           </div>
 
           <div className="floating-card floating-card-top">
-            <span>Site Performance Score</span>
-            <strong>98 / 100</strong>
+            <div className="floating-card-icon floating-card-icon-teal">
+              <TrendingUp size={16} strokeWidth={2} />
+            </div>
+            <div>
+              <span>Site Performance Score</span>
+              <strong>98 / 100</strong>
+            </div>
           </div>
 
           <div className="floating-card floating-card-bottom">
-            <span>Sample Lead</span>
-            <strong>New Inquiry</strong>
+            <div className="floating-card-icon floating-card-icon-blue">
+              <Bell size={16} strokeWidth={2} />
+            </div>
+            <div>
+              <span>Sample Lead</span>
+              <strong>New Inquiry</strong>
+            </div>
           </div>
         </motion.div>
       </div>
