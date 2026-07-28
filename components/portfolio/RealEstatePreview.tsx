@@ -12,7 +12,7 @@ export default function RealEstatePreview()  {
 
       <PreviewNavbar />
 
-      <PreviewHero icon={Home} tint={tint} />
+      <PreviewHero icon={Home} tint={tint} image="/images/portfolio/realestate.svg" />
 
       <PreviewButton width="large" />
 

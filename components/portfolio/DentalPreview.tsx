@@ -1,5 +1,6 @@
 import { Stethoscope } from "lucide-react";
 import PreviewNavbar from "./ui/PreviewNavbar";
+import PreviewHero from "./ui/PreviewHero";
 import PreviewAvatar from "./ui/PreviewAvatar";
 import PreviewButton from "./ui/PreviewButton";
 import PreviewCard from "./ui/PreviewCard";
@@ -12,6 +13,8 @@ export default function DentalPreview()  {
     <div className="preview dental-preview">
 
       <PreviewNavbar />
+
+      <PreviewHero icon={Stethoscope} tint={tint} image="/images/portfolio/dental.svg" />
 
       <div className="dental-preview-hero">
 

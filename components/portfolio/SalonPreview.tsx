@@ -12,7 +12,7 @@ export default function SalonPreview()  {
 
       <PreviewNavbar />
 
-      <PreviewHero icon={Scissors} tint={tint} />
+      <PreviewHero icon={Scissors} tint={tint} image="/images/portfolio/salon.svg" />
 
       <div className="salon-preview-actions">
         <PreviewButton width="medium" />

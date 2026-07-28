@@ -5,12 +5,14 @@ interface PreviewCardProps {
   variant?: "default" | "image" | "compact";
   icon?: LucideIcon;
   tint?: [string, string];
+  image?: string;
 }
 
 export default function PreviewCard({
   variant = "default",
   icon: Icon = Sparkles,
   tint = ["#fdba74", "#ea580c"],
+  image,
 }: PreviewCardProps) {
   return (
     <div className={`mini-preview-card mini-preview-card-${variant}`}>
@@ -18,11 +20,18 @@ export default function PreviewCard({
       {variant === "image" && (
         <div
           className="mini-preview-card-image"
-          style={{
-            background: `linear-gradient(135deg, ${tint[0]}, ${tint[1]})`,
-          }}
+          style={
+            image
+              ? undefined
+              : { background: `linear-gradient(135deg, ${tint[0]}, ${tint[1]})` }
+          }
         >
-          <Icon size={16} strokeWidth={2} />
+          {image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={image} alt="" />
+          ) : (
+            <Icon size={16} strokeWidth={2} />
+          )}
         </div>
       )}
 

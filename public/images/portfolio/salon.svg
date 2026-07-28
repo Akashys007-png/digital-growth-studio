@@ -1,0 +1,38 @@
+<svg width="400" height="260" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e879f9" />
+      <stop offset="100%" stop-color="#7e22ce" />
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="260" fill="url(#sBg)" />
+
+  <circle cx="340" cy="60" r="70" fill="#ffffff" opacity="0.07" />
+
+  <!-- comb -->
+  <g transform="translate(130,90) rotate(-20)" fill="#ffffff">
+    <rect x="0" y="0" width="90" height="18" rx="9" />
+    <rect x="4" y="16" width="6" height="34" rx="3" />
+    <rect x="16" y="16" width="6" height="34" rx="3" />
+    <rect x="28" y="16" width="6" height="34" rx="3" />
+    <rect x="40" y="16" width="6" height="34" rx="3" />
+    <rect x="52" y="16" width="6" height="34" rx="3" />
+    <rect x="64" y="16" width="6" height="34" rx="3" />
+    <rect x="76" y="16" width="6" height="34" rx="3" />
+  </g>
+
+  <!-- scissors -->
+  <g transform="translate(230,160) rotate(15)">
+    <circle cx="-18" cy="18" r="14" fill="none" stroke="#ffffff" stroke-width="7" />
+    <circle cx="18" cy="18" r="14" fill="none" stroke="#ffffff" stroke-width="7" />
+    <path d="M-10 8 L60 -70" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
+    <path d="M10 8 L-40 -70" stroke="#ffffff" stroke-width="7" stroke-linecap="round" />
+  </g>
+
+  <!-- sparkles -->
+  <g fill="#ffffff">
+    <path d="M300 90 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5 z" opacity="0.85" />
+    <path d="M95 180 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4 z" opacity="0.7" />
+  </g>
+</svg>

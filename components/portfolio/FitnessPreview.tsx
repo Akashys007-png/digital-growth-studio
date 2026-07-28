@@ -12,7 +12,7 @@ export default function FitnessPreview() {
 
       <PreviewNavbar />
 
-      <PreviewHero icon={Dumbbell} tint={tint} />
+      <PreviewHero icon={Dumbbell} tint={tint} image="/images/portfolio/fitness.svg" />
 
       <PreviewButton width="large" />
 

@@ -45,10 +45,18 @@
 
 .preview-hero-image {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   border-radius: 10px;
   color: #ffffff;
+}
+
+.preview-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .preview-hero-text {
@@ -154,10 +162,18 @@
 
 .mini-preview-card-image {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   height: 28px;
+  overflow: hidden;
   color: #ffffff;
+}
+
+.mini-preview-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .mini-preview-card-content {
