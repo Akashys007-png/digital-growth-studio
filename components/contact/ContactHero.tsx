@@ -17,13 +17,13 @@ export default function ContactHero() {
         <span className="contact-badge">Contact Us</span>
 
         <h1>
-          Let's Start Your
+          Let&apos;s Start Your
           <span> Next Project</span>
         </h1>
 
         <p>
-          Whether you're launching a new business, redesigning your website, or
-          looking to improve your digital presence, we'd love to learn about
+          Whether you&apos;re launching a new business, redesigning your website, or
+          looking to improve your digital presence, we&apos;d love to learn about
           your goals and discuss how we can help.
         </p>
 

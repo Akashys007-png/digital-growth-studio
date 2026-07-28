@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Digital Growth Studio",
     description:
       "Helping small businesses grow through modern websites, branding, SEO, and automation.",
-    url: "https://digitalgrowthstudio.pro",
+    url: "/",
     siteName: "Digital Growth Studio",
 
     images: [

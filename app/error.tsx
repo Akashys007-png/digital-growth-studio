@@ -33,7 +33,7 @@ export default function GlobalError({
         </h1>
 
         <p className="mt-6 text-lg text-gray-600">
-          We couldn't complete your request. Please try again or return to the homepage.
+          We couldn&apos;t complete your request. Please try again or return to the homepage.
         </p>
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">

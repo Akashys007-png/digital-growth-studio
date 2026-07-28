@@ -14,7 +14,7 @@ export default function ProjectTimeline({
         <div className="project-timeline-heading">
           <h2>Project Timeline</h2>
           <p>
-            From discovery to launch, here's how the project
+            From discovery to launch, here&apos;s how the project
             was planned and delivered.
           </p>
         </div>

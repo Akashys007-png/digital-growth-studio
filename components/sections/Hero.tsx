@@ -86,14 +86,14 @@ export default function Hero() {
             <div className="dashboard-header">
               <div>
                 <p className="dashboard-label">
-                  Business Growth
+                  Sample Client Dashboard
                 </p>
 
-                <h2>Digital Performance</h2>
+                <h2>What Growth Looks Like</h2>
               </div>
 
               <span className="dashboard-status">
-                Live
+                Example
               </span>
             </div>
 
@@ -134,13 +134,13 @@ export default function Hero() {
           </div>
 
           <div className="floating-card floating-card-top">
-            <span>Website Performance</span>
+            <span>Site Performance Score</span>
             <strong>98 / 100</strong>
           </div>
 
           <div className="floating-card floating-card-bottom">
-            <span>New Customer Lead</span>
-            <strong>Just Received</strong>
+            <span>Sample Lead</span>
+            <strong>New Inquiry</strong>
           </div>
         </motion.div>
       </div>
