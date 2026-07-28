@@ -52,21 +52,82 @@ export default function ProjectGallery({
               <span />
             </div>
 
-            <div className="gallery-placeholder-hero" />
+            {current.type === "home" && (
+              <>
+                <div className="gallery-placeholder-hero" />
 
-            <div className="gallery-placeholder-row">
-              <div className="gallery-placeholder-cta" />
-              <div className="gallery-placeholder-lines">
-                <span />
-                <span />
+                <div className="gallery-placeholder-row">
+                  <div className="gallery-placeholder-cta" />
+                  <div className="gallery-placeholder-lines">
+                    <span />
+                    <span />
+                  </div>
+                </div>
+
+                <div className="gallery-placeholder-grid">
+                  <div />
+                  <div />
+                  <div />
+                </div>
+              </>
+            )}
+
+            {current.type === "about" && (
+              <>
+                <div className="gallery-placeholder-hero gallery-about-photo" />
+
+                <div className="gallery-about-team">
+                  <div className="gallery-about-avatar" />
+                  <div className="gallery-about-avatar" />
+                  <div className="gallery-about-avatar" />
+                </div>
+
+                <div className="gallery-placeholder-lines gallery-about-lines">
+                  <span />
+                  <span />
+                  <span />
+                </div>
+              </>
+            )}
+
+            {current.type === "services" && (
+              <>
+                <div className="gallery-placeholder-lines gallery-services-heading">
+                  <span />
+                  <span />
+                </div>
+
+                <div className="gallery-services-grid">
+                  {[0, 1, 2].map((item) => (
+                    <div key={item} className="gallery-services-card">
+                      <div className="gallery-services-icon" />
+                      <span className="gallery-services-title" />
+                      <span className="gallery-services-text" />
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
+
+            {current.type === "contact" && (
+              <div className="gallery-contact-layout">
+                <div className="gallery-contact-info">
+                  {[0, 1, 2].map((item) => (
+                    <div key={item} className="gallery-contact-row">
+                      <div className="gallery-contact-icon" />
+                      <span />
+                    </div>
+                  ))}
+                </div>
+
+                <div className="gallery-contact-form">
+                  <div className="gallery-contact-field" />
+                  <div className="gallery-contact-field" />
+                  <div className="gallery-contact-field gallery-contact-field-tall" />
+                  <div className="gallery-placeholder-cta" />
+                </div>
               </div>
-            </div>
-
-            <div className="gallery-placeholder-grid">
-              <div />
-              <div />
-              <div />
-            </div>
+            )}
           </div>
 
         </div>
