@@ -478,27 +478,95 @@
 }
 
 .case-study-header {
-  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 3.5rem 2.5rem;
+  border-radius: var(--radius-lg, 28px);
   text-align: center;
+  color: #ffffff;
+  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.18);
+}
+
+.case-study-header::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.case-study-header::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.case-study-header-illustration {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.14;
+  mix-blend-mode: overlay;
+}
+
+.case-study-header-icon {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.25rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
 }
 
 .case-study-category {
+  position: relative;
+  z-index: 2;
   display: inline-block;
   padding: 0.4rem 1rem;
   border-radius: 999px;
-  background: var(--primary-light);
-  color: var(--primary);
-  font-weight: 600;
-  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
 }
 
 .case-study-header h1 {
+  position: relative;
+  z-index: 2;
   margin-bottom: 1rem;
+  color: #ffffff;
 }
 
 .case-study-header p {
-  color: var(--text-light);
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 640px) {
+  .case-study-header {
+    padding: 2.5rem 1.5rem;
+  }
 }
 
 .case-study-content {
