@@ -44,8 +44,11 @@
 }
 
 .preview-hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
-  background: linear-gradient(135deg, #fb923c, #9a3412);
+  color: #ffffff;
 }
 
 .preview-hero-text {
@@ -67,9 +70,14 @@
 }
 
 .preview-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   height: 28px;
+  padding: 0 0.55rem;
   border-radius: 8px;
   background: #2457ff;
+  color: #ffffff;
 }
 
 .preview-button-small {
@@ -101,13 +109,7 @@
 .preview-rating-stars {
   display: flex;
   gap: 0.15rem;
-}
-
-.preview-rating-stars span {
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  background: #f59e0b;
+  color: #f59e0b;
 }
 
 .preview-rating-line {
@@ -151,8 +153,11 @@
 }
 
 .mini-preview-card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 28px;
-  background: linear-gradient(135deg, #fdba74, #ea580c);
+  color: #ffffff;
 }
 
 .mini-preview-card-content {
@@ -183,10 +188,14 @@
 }
 
 .preview-avatar-image {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #bae6fd, #0284c7);
+  color: #ffffff;
 }
 
 .preview-avatar-content {

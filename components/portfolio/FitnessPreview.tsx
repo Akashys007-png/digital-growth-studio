@@ -1,7 +1,10 @@
+import { Dumbbell, Flame } from "lucide-react";
 import PreviewNavbar from "./ui/PreviewNavbar";
 import PreviewHero from "./ui/PreviewHero";
 import PreviewButton from "./ui/PreviewButton";
 import PreviewCard from "./ui/PreviewCard";
+
+const tint: [string, string] = ["#ef4444", "#111827"];
 
 export default function FitnessPreview() {
   return (
@@ -9,15 +12,15 @@ export default function FitnessPreview() {
 
       <PreviewNavbar />
 
-      <PreviewHero />
+      <PreviewHero icon={Dumbbell} tint={tint} />
 
       <PreviewButton width="large" />
 
       <div className="fitness-preview-cards">
 
-        <PreviewCard />
+        <PreviewCard variant="image" icon={Flame} tint={tint} />
 
-        <PreviewCard />
+        <PreviewCard variant="image" icon={Dumbbell} tint={tint} />
 
       </div>
 
