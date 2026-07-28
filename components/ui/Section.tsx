@@ -10,9 +10,9 @@ interface SectionProps {
 }
 
 const spacingMap = {
-  compact: "py-16 lg:py-20",
-  normal: "py-20 lg:py-28",
-  large: "py-28 lg:py-36",
+  compact: "py-10 lg:py-14",
+  normal: "py-14 lg:py-20",
+  large: "py-20 lg:py-28",
 };
 
 export default function Section({

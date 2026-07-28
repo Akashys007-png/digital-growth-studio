@@ -4,7 +4,7 @@
 
 .portfolio-section {
   position: relative;
-  padding: 7rem 0;
+  padding: 5rem 0;
   overflow: hidden;
   background:
     radial-gradient(
@@ -465,16 +465,16 @@
 ========================== */
 
 .portfolio-page-hero {
-  padding-top: 8rem;
-  padding-bottom: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 /* ==========================
    CASE STUDY
 ========================== */
 
 .case-study-hero {
-  padding-top: 8rem;
-  padding-bottom: 3rem;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
 }
 
 .case-study-header {
@@ -507,7 +507,7 @@
 }
 
 .case-study-block {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .case-study-block h2 {
@@ -543,7 +543,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   max-width: 1100px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2rem;
 }
 
 .metric-card {
@@ -670,12 +670,12 @@
 
 .project-timeline {
   max-width: 900px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2rem;
 }
 
 .project-timeline-heading {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .timeline-list {
@@ -932,7 +932,7 @@
 }
 .case-study-section-header {
   max-width: 760px;
-  margin: 0 auto 4rem;
+  margin: 0 auto 2.5rem;
 }
 
 .case-study-section-header--center {
@@ -1118,17 +1118,90 @@
 }
 
 .gallery-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 220px;
+  position: relative;
+  padding: 1.5rem;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, rgba(36, 87, 255, 0.08), rgba(15, 157, 138, 0.08));
-  color: var(--color-primary);
+  border: 1px solid var(--border-color);
+  background: linear-gradient(135deg, rgba(36, 87, 255, 0.05), rgba(15, 157, 138, 0.05));
+  text-align: left;
+}
+
+.gallery-placeholder-tag {
+  position: absolute;
+  top: -0.6rem;
+  left: 1.5rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.85rem;
+}
+
+.gallery-placeholder-toolbar {
+  display: flex;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-placeholder-toolbar span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #d8dee8;
+}
+
+.gallery-placeholder-hero {
+  height: 70px;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(36, 87, 255, 0.15), rgba(15, 157, 138, 0.15));
+}
+
+.gallery-placeholder-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.gallery-placeholder-cta {
+  flex-shrink: 0;
+  width: 90px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--color-primary);
+}
+
+.gallery-placeholder-lines {
+  flex: 1;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.gallery-placeholder-lines span {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.gallery-placeholder-lines span:last-child {
+  width: 65%;
+}
+
+.gallery-placeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.gallery-placeholder-grid div {
+  height: 40px;
+  border-radius: 8px;
+  background: #edf2f7;
 }
 
 /* ==========================

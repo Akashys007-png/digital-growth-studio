@@ -43,9 +43,30 @@ export default function ProjectGallery({
 
           <p>{current.description}</p>
 
-          {/* We'll replace this placeholder with actual previews in the next step */}
           <div className="gallery-placeholder">
-            {current.type}
+            <span className="gallery-placeholder-tag">{current.type}</span>
+
+            <div className="gallery-placeholder-toolbar">
+              <span />
+              <span />
+              <span />
+            </div>
+
+            <div className="gallery-placeholder-hero" />
+
+            <div className="gallery-placeholder-row">
+              <div className="gallery-placeholder-cta" />
+              <div className="gallery-placeholder-lines">
+                <span />
+                <span />
+              </div>
+            </div>
+
+            <div className="gallery-placeholder-grid">
+              <div />
+              <div />
+              <div />
+            </div>
           </div>
 
         </div>
