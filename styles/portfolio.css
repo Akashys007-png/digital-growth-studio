@@ -1054,3 +1054,200 @@
     height: 46px;
   }
 }
+
+/* ==========================
+   PROJECT GALLERY
+   (previously had no styles at all, so it rendered as
+   unstyled plain text on every case study page)
+========================== */
+
+.project-gallery {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.gallery-tabs button {
+  padding: 0.65rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.gallery-tabs button:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.gallery-tabs button.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 12px 30px rgba(36, 87, 255, 0.25);
+}
+
+.gallery-preview {
+  padding: 2.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.gallery-preview h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.4rem;
+}
+
+.gallery-preview p {
+  margin: 0 0 1.5rem;
+  color: var(--text-secondary);
+}
+
+.gallery-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(36, 87, 255, 0.08), rgba(15, 157, 138, 0.08));
+  color: var(--color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+}
+
+/* ==========================
+   BRAND PALETTE
+   (previously had no styles at all)
+========================== */
+
+.brand-palette {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.brand-colors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.brand-color-card {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  text-align: center;
+}
+
+.brand-color-preview {
+  height: 90px;
+}
+
+.brand-color-card strong {
+  display: block;
+  padding: 0.85rem 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  text-transform: uppercase;
+}
+
+.brand-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.06);
+}
+
+.brand-details strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-primary);
+}
+
+.brand-details p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+/* ==========================
+   PROJECT TESTIMONIAL
+   (previously had no styles at all)
+========================== */
+
+.project-testimonial {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.75rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.testimonial-stars {
+  margin-bottom: 1.25rem;
+  color: #f59e0b;
+  font-size: 1.4rem;
+  letter-spacing: 0.15em;
+}
+
+.project-testimonial blockquote {
+  margin: 0 0 1.75rem;
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.testimonial-author strong {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.testimonial-author span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 650px) {
+  .gallery-preview,
+  .project-testimonial,
+  .brand-details {
+    padding: 1.5rem;
+  }
+}

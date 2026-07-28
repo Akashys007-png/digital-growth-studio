@@ -39,6 +39,7 @@
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 24px;
+  --radius-xl: 32px;
 
   /* Shadows */
   --shadow-sm: 0 10px 30px rgba(15, 23, 42, 0.05);
@@ -47,8 +48,35 @@
 
   /* Transitions */
   --transition: all 0.3s ease;
+
+  /* --------------------------------------------------------
+     Aliases: many component stylesheets (about.css, contact.css,
+     industries.css, portfolio.css, resources.css, services.css,
+     services-page.css, and the body rule just below) reference
+     these variable names, but they were never defined, so those
+     colors/backgrounds/radii were silently failing sitewide.
+     Aliasing them to the tokens above fixes those pages without
+     rewriting every rule.
+     -------------------------------------------------------- */
+  --bg: var(--background);
+  --ink: var(--text-primary);
+  --muted: var(--text-secondary);
+  --text-light: var(--text-secondary);
+  --text-muted: var(--text-secondary);
+  --border: var(--border-color);
+  --card-bg: var(--surface);
+  --color-primary: var(--blue);
+  --primary: var(--blue);
+  --primary-light: rgba(36, 87, 255, 0.1);
+  --primary-rgb: 36, 87, 255;
+  --color-heading: var(--navy);
+  --brand-blue: var(--blue);
+  --brand-navy: var(--navy);
+  --brand-teal: var(--teal);
+  --brand-teal-dark: #087568;
+  --brand-teal-light: #e7f8f4;
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}h1,h2,h3,h4{font-family:Poppins,Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.035em}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.container{width:min(1180px,calc(100% - 2rem));margin-inline:auto}.section{padding:5.5rem 0}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}.display{font-size:clamp(2.7rem,7vw,5.7rem);line-height:.98}.title{font-size:clamp(2rem,4vw,3.4rem);line-height:1.08}.lead{font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.75;color:var(--muted)}.muted{color:var(--muted)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.card{background:#fff;border:1px solid #e2e8f0;border-radius:1.5rem;padding:1.5rem;box-shadow:0 14px 45px rgba(15,23,42,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Times New Roman",Times,serif}h1,h2,h3,h4{font-family:"Times New Roman",Times,serif;letter-spacing:-.035em}a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}.container{width:min(1180px,calc(100% - 2rem));margin-inline:auto}.section{padding:5.5rem 0}.eyebrow{font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal)}.display{font-size:clamp(2.7rem,7vw,5.7rem);line-height:.98}.title{font-size:clamp(2rem,4vw,3.4rem);line-height:1.08}.lead{font-size:clamp(1.05rem,2vw,1.25rem);line-height:1.75;color:var(--muted)}.muted{color:var(--muted)}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}.card{background:#fff;border:1px solid #e2e8f0;border-radius:1.5rem;padding:1.5rem;box-shadow:0 14px 45px rgba(15,23,42,.06)}
 .btn{
 display:inline-flex;
 align-items:center;
