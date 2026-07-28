@@ -21,21 +21,23 @@ export default function ProjectShowcase({
   description="A responsive website concept focused on usability, performance, visual consistency, and business growth."
 />
 
-        <BrowserMockup>
-  <div
-    className={`project-showcase-preview ${project.className}`}
-  >
-    <PortfolioPreview type={project.previewType} />
-  </div>
-</BrowserMockup>
+        <div className="project-showcase-devices">
+          <BrowserMockup>
+            <div
+              className={`project-showcase-preview ${project.className}`}
+            >
+              <PortfolioPreview type={project.previewType} />
+            </div>
+          </BrowserMockup>
 
-<MobileMockup>
-    <div
-      className={`project-showcase-preview mobile ${project.className}`}
-    >
-      <PortfolioPreview type={project.previewType} />
-    </div>
-  </MobileMockup>
+          <MobileMockup>
+            <div
+              className={`project-showcase-preview mobile ${project.className}`}
+            >
+              <PortfolioPreview type={project.previewType} />
+            </div>
+          </MobileMockup>
+        </div>
       </div>
     </Section>
   );
