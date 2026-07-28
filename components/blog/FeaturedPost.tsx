@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogPost } from "@/data/blogPosts";
 
 interface FeaturedPostProps {
@@ -44,9 +45,12 @@ export default function FeaturedPost({
       </div>
 
       <div className="featured-image">
-        <div className="image-placeholder">
-          Blog Cover
-        </div>
+        <Image
+          src={post.coverImage}
+          alt={post.title}
+          fill
+          sizes="(max-width: 900px) 100vw, 560px"
+        />
       </div>
     </article>
   );

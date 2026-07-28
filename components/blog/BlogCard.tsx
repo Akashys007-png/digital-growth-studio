@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogPost } from "@/data/blogPosts";
 
 interface BlogCardProps {
@@ -11,7 +12,12 @@ export default function BlogCard({
   return (
     <article className="blog-card">
       <div className="blog-card-image">
-        <span>Blog Image</span>
+        <Image
+          src={post.coverImage}
+          alt={post.title}
+          fill
+          sizes="(max-width: 900px) 100vw, 380px"
+        />
       </div>
 
       <div className="blog-card-content">

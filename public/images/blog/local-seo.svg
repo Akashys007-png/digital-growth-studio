@@ -1,0 +1,66 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradSeo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1f3a" />
+      <stop offset="100%" stop-color="#0f9d8a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bgGradSeo)" />
+
+  <circle cx="140" cy="120" r="180" fill="#ffffff" opacity="0.05" />
+  <circle cx="1060" cy="520" r="220" fill="#2457ff" opacity="0.10" />
+
+  <!-- faint map grid -->
+  <g stroke="#ffffff" stroke-opacity="0.08" stroke-width="1">
+    <line x1="0" y1="150" x2="1200" y2="150" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="450" x2="1200" y2="450" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="500" y1="0" x2="500" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+  </g>
+
+  <!-- scattered location pins -->
+  <g fill="#ffffff" opacity="0.35">
+    <path d="M230 210 c0 -18 -14 -32 -32 -32 s-32 14 -32 32 c0 22 32 52 32 52 s32 -30 32 -52 z" />
+    <circle cx="198" cy="210" r="10" fill="#0b1f3a" />
+  </g>
+  <g fill="#ffffff" opacity="0.35">
+    <path d="M1000 420 c0 -15 -12 -27 -27 -27 s-27 12 -27 27 c0 19 27 45 27 45 s27 -26 27 -45 z" />
+    <circle cx="973" cy="420" r="9" fill="#0b1f3a" />
+  </g>
+
+  <!-- central card -->
+  <rect x="380" y="145" width="440" height="340" rx="28" fill="#ffffff" opacity="0.97" />
+
+  <!-- large map pin -->
+  <g transform="translate(600,300)">
+    <path d="M0 -95 c-52 0 -94 42 -94 94 c0 70 94 166 94 166 s94 -96 94 -166 c0 -52 -42 -94 -94 -94 z"
+          fill="#0f9d8a" />
+    <circle cx="0" cy="-1" r="42" fill="#ffffff" />
+    <circle cx="0" cy="-1" r="22" fill="#0b1f3a" />
+  </g>
+
+  <!-- magnifying glass overlapping bottom-right of the pin -->
+  <g transform="translate(690,380)">
+    <circle cx="0" cy="0" r="46" fill="none" stroke="#2457ff" stroke-width="14" />
+    <line x1="34" y1="34" x2="70" y2="70" stroke="#2457ff" stroke-width="16" stroke-linecap="round" />
+    <circle cx="0" cy="0" r="46" fill="#ffffff" opacity="0.15" />
+  </g>
+
+  <!-- badge label -->
+  <g transform="translate(430,190)">
+    <rect x="0" y="0" width="150" height="34" rx="17" fill="#e7f8f4" />
+    <text x="75" y="23" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#087568" text-anchor="middle">LOCAL SEO</text>
+  </g>
+
+  <!-- Brand mark -->
+  <g transform="translate(60,540)">
+    <rect x="0" y="0" width="40" height="40" rx="10" fill="#2457ff" />
+    <text x="20" y="26" font-family="Poppins, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">DGS</text>
+    <text x="52" y="18" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Digital Growth Studio</text>
+    <text x="52" y="34" font-family="Inter, Arial, sans-serif" font-size="12" fill="#d1fae5">SEO</text>
+  </g>
+</svg>

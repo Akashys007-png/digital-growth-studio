@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
 
     featured: true,
 
-    coverImage: "/images/blog/website-growth.jpg",
+    coverImage: "/images/blog/website-growth.svg",
 
     content: [
       "A modern website is often the first interaction a potential customer has with a business. Before visiting a physical location or making a phone call, customers usually search online to learn about the company, its services, reputation, and contact information.",
@@ -67,7 +67,7 @@ export const blogPosts: BlogPost[] = [
 
     featured: false,
 
-    coverImage: "/images/blog/local-seo.jpg",
+    coverImage: "/images/blog/local-seo.svg",
 
     content: [
       "Local search engine optimization helps businesses appear when nearby customers search for products or services. It is especially important for restaurants, salons, clinics, contractors, retail stores, law firms, and other businesses that serve a specific geographic area.",
@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
 
     featured: false,
 
-    coverImage: "/images/blog/performance.jpg",
+    coverImage: "/images/blog/performance.svg",
 
     content: [
       "Website speed plays an important role in how visitors experience a business online. When a page takes too long to load, users may leave before they can understand the company's services, products, or value.",
