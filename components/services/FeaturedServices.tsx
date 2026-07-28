@@ -8,7 +8,8 @@ import Button from "@/components/ui/Button";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 
-import { services } from "@/data/site";
+import { services } from "@/data/services";
+import { serviceIcons } from "@/data/serviceIcons";
 
 export default function FeaturedServices() {
   return (
@@ -19,39 +20,47 @@ export default function FeaturedServices() {
         description="Every business is different. We offer flexible digital services that solve real problems and support long-term growth." badge={""}      />
 
       <div className="featured-services-grid">
-        {services.map((service, index) => (
-          <motion.div
-            key={service.slug}
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.5,
-              delay: index * 0.08,
-            }}
-          >
-            <Card className="featured-service-card">
-              <span className="section-badge">
-                Service
-              </span>
+        {services.map((service, index) => {
+          const Icon = serviceIcons[service.slug];
 
-              <h3>{service.title}</h3>
+          return (
+            <motion.div
+              key={service.slug}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.5,
+                delay: index * 0.08,
+              }}
+            >
+              <Card className="featured-service-card">
+                <div className="service-icon">
+                  <Icon size={26} strokeWidth={2} />
+                </div>
 
-              <p>{service.short}</p>
+                <span className="section-badge">
+                  Service
+                </span>
 
-              <strong className="service-benefit">
-                {service.benefit}
-              </strong>
+                <h3>{service.name}</h3>
 
-              <Button
-                href={`/services/${service.slug}`}
-                variant="outline"
-              >
-                Learn More
-              </Button>
-            </Card>
-          </motion.div>
-        ))}
+                <p>{service.description}</p>
+
+                <strong className="service-benefit">
+                  {service.headline} {service.highlight}
+                </strong>
+
+                <Button
+                  href={`/services/${service.slug}`}
+                  variant="outline"
+                >
+                  Learn More
+                </Button>
+              </Card>
+            </motion.div>
+          );
+        })}
       </div>
     </Section>
   );
