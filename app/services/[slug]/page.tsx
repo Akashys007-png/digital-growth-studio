@@ -54,24 +54,7 @@ export default async function ServicePage({
   }
 
   return (
-    <main className="min-h-screen py-20">
-      <div className="container mx-auto px-6">
-        <span className="inline-block rounded-full bg-blue-100 px-4 py-1 text-sm font-medium text-blue-700">
-          {service.badge}
-        </span>
-
-        <h1 className="mt-6 text-5xl font-bold">
-          {service.headline}{" "}
-          <span className="text-blue-600">
-            {service.highlight}
-          </span>
-        </h1>
-
-        <p className="mt-6 max-w-3xl text-lg text-gray-600">
-          {service.description}
-        </p>
-      </div>
-
+    <main className="min-h-screen">
       <Hero service={service} />
 
       <Features service={service} />
