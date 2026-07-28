@@ -20,6 +20,28 @@ export const metadata: Metadata = {
   title: "Industries",
   description:
     "Digital solutions tailored for restaurants, healthcare, retail, fitness, real estate, contractors, and professional services.",
+
+  openGraph: {
+    title: "Industries | Digital Growth Studio",
+    description:
+      "Digital solutions tailored for restaurants, healthcare, retail, fitness, real estate, contractors, and professional services.",
+    images: [
+      {
+        url: "/images/og/home.png",
+        width: 1200,
+        height: 630,
+        alt: "Digital Growth Studio Industries",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Industries | Digital Growth Studio",
+    description:
+      "Digital solutions tailored for restaurants, healthcare, retail, fitness, real estate, contractors, and professional services.",
+    images: ["/images/og/home.png"],
+  },
 };
 
 export default function IndustriesPage() {

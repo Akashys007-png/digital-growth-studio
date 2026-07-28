@@ -25,7 +25,7 @@ export default function RestaurantPreview() {
       </div>
 
       <div className="restaurant-preview-cards">
-        <PreviewCard variant="image" icon={Soup} tint={tint} image="/images/portfolio/restaurant.svg" />
+        <PreviewCard variant="image" icon={Soup} tint={tint} />
         <PreviewCard variant="image" icon={Coffee} tint={tint} />
         <PreviewCard variant="image" icon={UtensilsCrossed} tint={tint} />
       </div>

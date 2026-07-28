@@ -1,13 +1,36 @@
-import { CheckCircle2, ClipboardList } from "lucide-react";
+import type { Metadata } from "next";
+import { CheckCircle2, ClipboardList, CalendarCheck } from "lucide-react";
 import ContactForm from "@/components/contact-form";
 import PageHero from "@/components/page-hero";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
-export const metadata = {
-  title:
-    "A focused conversation about your customers, goals, current website, and next practical step.",
+export const metadata: Metadata = {
+  title: "Book a Consultation",
+
   description:
     "The consultation is designed to clarify the opportunity, not pressure you into a purchase.",
+
+  openGraph: {
+    title: "Book a Free Consultation | Digital Growth Studio",
+    description:
+      "A focused conversation about your customers, goals, current website, and next practical step.",
+    images: [
+      {
+        url: "/images/og/home.png",
+        width: 1200,
+        height: 630,
+        alt: "Book a Consultation with Digital Growth Studio",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Free Consultation | Digital Growth Studio",
+    description:
+      "A focused conversation about your customers, goals, current website, and next practical step.",
+    images: ["/images/og/home.png"],
+  },
 };
 
 const expectations = [
@@ -24,6 +47,7 @@ export default function Page() {
         eyebrow="Book a Consultation"
         title="A focused conversation about your customers, goals, current website, and next practical step."
         copy="The consultation is designed to clarify the opportunity, not pressure you into a purchase."
+        icon={CalendarCheck}
       />
 
       <section className="section">

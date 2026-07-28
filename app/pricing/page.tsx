@@ -1,12 +1,36 @@
-import { Check } from "lucide-react";
+import type { Metadata } from "next";
+import { Check, Tag } from "lucide-react";
 
 import PageHero from "@/components/page-hero";
 import { pricingPlans } from "@/data/pricing";
 
-export const metadata = {
-  title: "Flexible starting points with clear scope and expectations.",
+export const metadata: Metadata = {
+  title: "Pricing",
+
   description:
     "Choose a practical foundation and expand only when additional functionality supports a real goal.",
+
+  openGraph: {
+    title: "Pricing | Digital Growth Studio",
+    description:
+      "Flexible starting points with clear scope and expectations for small business websites.",
+    images: [
+      {
+        url: "/images/og/home.png",
+        width: 1200,
+        height: 630,
+        alt: "Digital Growth Studio Pricing",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing | Digital Growth Studio",
+    description:
+      "Flexible starting points with clear scope and expectations for small business websites.",
+    images: ["/images/og/home.png"],
+  },
 };
 
 export default function Page() {
@@ -16,6 +40,7 @@ export default function Page() {
         eyebrow="Pricing"
         title="Flexible starting points with clear scope and expectations."
         copy="Choose a practical foundation and expand only when additional functionality supports a real goal."
+        icon={Tag}
       />
 
       <section className="section pricing">

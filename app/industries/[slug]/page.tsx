@@ -39,8 +39,28 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${industry.name} | Digital Growth Studio`,
+    title: industry.name,
     description: industry.description,
+
+    openGraph: {
+      title: `${industry.name} | Digital Growth Studio`,
+      description: industry.description,
+      images: [
+        {
+          url: "/images/og/home.png",
+          width: 1200,
+          height: 630,
+          alt: `${industry.name} Digital Solutions`,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${industry.name} | Digital Growth Studio`,
+      description: industry.description,
+      images: ["/images/og/home.png"],
+    },
   };
 }
 

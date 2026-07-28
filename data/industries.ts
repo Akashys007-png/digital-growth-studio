@@ -5,6 +5,9 @@ import {
   Scale,
   Building2,
   Hammer,
+  ShoppingBag,
+  Scissors,
+  Briefcase,
   type LucideIcon,
 } from "lucide-react";
 
@@ -101,7 +104,7 @@ export const industries: Industry[] = [
       title: "Modern Restaurant Website",
       description:
         "A responsive restaurant website featuring an online menu, reservation options, location details, and local SEO improvements.",
-      href: "/portfolio/restaurant-website",
+      href: "/portfolio/bella-vista-restaurant",
     },
 
     faqs: [
@@ -187,7 +190,7 @@ export const industries: Industry[] = [
       title: "Dental Clinic Platform",
       description:
         "A professional healthcare website featuring appointment requests, treatment information, provider profiles, and patient resources.",
-      href: "/portfolio/dental-clinic",
+      href: "/portfolio/brightsmile-dental",
     },
 
     faqs: [
@@ -273,7 +276,7 @@ export const industries: Industry[] = [
       title: "Fitness Studio Website",
       description:
         "A modern fitness platform featuring memberships, class schedules, trainer information, and lead-generation forms.",
-      href: "/portfolio/fitness-studio",
+      href: "/portfolio/corefit-studio",
     },
 
     faqs: [
@@ -359,7 +362,7 @@ export const industries: Industry[] = [
       title: "Professional Law Firm Website",
       description:
         "A credibility-focused legal website featuring attorney profiles, practice areas, consultation requests, and educational content.",
-      href: "/portfolio/law-firm",
+      href: "/portfolio/summit-legal",
     },
 
     faqs: [
@@ -445,7 +448,7 @@ export const industries: Industry[] = [
       title: "Real Estate Agent Website",
       description:
         "A lead-focused property website featuring listings, agent branding, buyer and seller resources, and inquiry forms.",
-      href: "/portfolio/real-estate",
+      href: "/portfolio/northstar-realty",
     },
 
     faqs: [
@@ -528,10 +531,10 @@ export const industries: Industry[] = [
     ],
 
     project: {
-      title: "Home Services Lead-Generation Website",
+      title: "Explore Our Portfolio",
       description:
-        "A conversion-focused contractor website featuring service pages, quote requests, local SEO, reviews, and project examples.",
-      href: "/portfolio/home-services",
+        "See examples of conversion-focused websites we've designed with service pages, quote requests, local SEO, reviews, and project galleries.",
+      href: "/portfolio",
     },
 
     faqs: [
@@ -560,6 +563,264 @@ export const industries: Industry[] = [
     ctaTitle: "Ready to Generate More Local Leads?",
     ctaDescription:
       "Let’s build a professional website that helps homeowners trust your business and request your services.",
+  },
+
+  {
+    slug: "retail",
+    name: "Retail",
+    badge: "Retail Digital Solutions",
+    headline: "Turn Browsers Into Buyers With a",
+    highlight: "Better Online Store",
+    description:
+      "We build modern retail and e-commerce websites that showcase products clearly, simplify checkout, and help shoppers find what they need.",
+    icon: ShoppingBag,
+
+    challenges: [
+      {
+        title: "Confusing Product Discovery",
+        description:
+          "Shoppers may leave when products are hard to browse, search, or filter across devices.",
+      },
+      {
+        title: "Complicated Checkout",
+        description:
+          "A slow or unclear checkout process leads to abandoned carts and lost sales.",
+      },
+      {
+        title: "Limited Online Visibility",
+        description:
+          "Without strong SEO and product data, potential customers may never discover your store online.",
+      },
+    ],
+
+    solutions: [
+      {
+        title: "Clear Product Architecture",
+        description:
+          "Organized categories, filters, and search that help shoppers find products quickly.",
+      },
+      {
+        title: "Streamlined Checkout",
+        description:
+          "A fast, mobile-friendly checkout experience that reduces cart abandonment.",
+      },
+      {
+        title: "Inventory-Ready Structure",
+        description:
+          "A store structure that scales cleanly as your product catalog grows.",
+      },
+      {
+        title: "SEO & Store Analytics",
+        description:
+          "Technical SEO and analytics setup so you can track what shoppers are doing and improve over time.",
+      },
+    ],
+
+    project: {
+      title: "Explore Our Portfolio",
+      description:
+        "See examples of conversion-focused websites we've designed with clear product presentation and simple checkout flows.",
+      href: "/portfolio",
+    },
+
+    faqs: [
+      {
+        question: "Can you integrate a payment processor?",
+        answer:
+          "Yes. We can integrate providers such as Stripe, PayPal, Square, or platform-native checkout depending on your store.",
+      },
+      {
+        question: "Can I manage products myself after launch?",
+        answer:
+          "Yes. We set up a content and inventory management workflow so your team can add, edit, and update products directly.",
+      },
+      {
+        question: "Will my store work well on mobile devices?",
+        answer:
+          "Yes. Every store we build is designed mobile-first, since most shopping traffic happens on phones.",
+      },
+      {
+        question: "Can you help my store rank in search results?",
+        answer:
+          "Yes. We apply technical and on-page SEO best practices to product and category pages to improve discoverability.",
+      },
+    ],
+
+    ctaTitle: "Ready to Grow Your Online Store?",
+    ctaDescription:
+      "Let’s build a retail experience that makes it easy for shoppers to discover products and complete a purchase.",
+  },
+
+  {
+    slug: "salons-spas",
+    name: "Salons & Spas",
+    badge: "Salon & Spa Digital Solutions",
+    headline: "Elevate Your Brand With a",
+    highlight: "Premium Booking Experience",
+    description:
+      "We build elegant salon and spa websites that showcase services, stylists, and pricing while making it effortless for clients to book online.",
+    icon: Scissors,
+
+    challenges: [
+      {
+        title: "No Online Booking",
+        description:
+          "Relying on phone-only bookings makes it harder for clients to schedule appointments on their own time.",
+      },
+      {
+        title: "Weak Brand Presentation",
+        description:
+          "An outdated website can undersell a premium service experience and stylist expertise.",
+      },
+      {
+        title: "Unclear Services & Pricing",
+        description:
+          "Clients may hesitate to book when services, pricing, and stylist information are hard to find.",
+      },
+    ],
+
+    solutions: [
+      {
+        title: "Online Appointment Booking",
+        description:
+          "Let clients browse services and request or book appointments directly from your website.",
+      },
+      {
+        title: "Elegant Visual Branding",
+        description:
+          "A polished visual design that reflects the quality and atmosphere of your salon or spa.",
+      },
+      {
+        title: "Stylist & Service Profiles",
+        description:
+          "Highlight individual stylists, specialties, and clear service pricing.",
+      },
+      {
+        title: "Reviews & Social Proof",
+        description:
+          "Showcase client reviews and before-and-after work to build trust with new clients.",
+      },
+    ],
+
+    project: {
+      title: "Luxe Salon & Spa",
+      description:
+        "A premium beauty and wellness website designed to present services, stylists, pricing, and online booking.",
+      href: "/portfolio/luxe-salon",
+    },
+
+    faqs: [
+      {
+        question: "Can clients book appointments directly on the website?",
+        answer:
+          "Yes. We can integrate an online booking system or build a custom request flow depending on your preference.",
+      },
+      {
+        question: "Can I showcase individual stylists?",
+        answer:
+          "Yes. We can build dedicated stylist profiles with specialties, portfolios, and booking links.",
+      },
+      {
+        question: "Can I update services and pricing myself?",
+        answer:
+          "Yes. We set up a simple content management workflow so your team can update services and pricing directly.",
+      },
+      {
+        question: "Will the website reflect our brand's premium feel?",
+        answer:
+          "Yes. We design every salon and spa website around your brand's visual identity and tone.",
+      },
+    ],
+
+    ctaTitle: "Ready to Elevate Your Salon or Spa Online?",
+    ctaDescription:
+      "Let’s create a booking experience that matches the quality of the service you provide in person.",
+  },
+
+  {
+    slug: "professional-services",
+    name: "Professional Services",
+    badge: "Professional Services Digital Solutions",
+    headline: "Build Credibility With a",
+    highlight: "Trustworthy Digital Presence",
+    description:
+      "We build professional websites for consultants, accountants, agencies, and service professionals that establish credibility and generate qualified leads.",
+    icon: Briefcase,
+
+    challenges: [
+      {
+        title: "Low Credibility Online",
+        description:
+          "An outdated or generic website can make prospective clients question your expertise.",
+      },
+      {
+        title: "Unclear Service Offerings",
+        description:
+          "Visitors may leave when it's not immediately clear what services you provide or who you serve.",
+      },
+      {
+        title: "Weak Lead Generation",
+        description:
+          "Without clear calls to action, interested visitors may never reach out to start a conversation.",
+      },
+    ],
+
+    solutions: [
+      {
+        title: "Credibility-Focused Design",
+        description:
+          "A professional, modern design that reflects your expertise and builds client trust.",
+      },
+      {
+        title: "Clear Service Pages",
+        description:
+          "Organized pages that explain your services, process, and ideal clients.",
+      },
+      {
+        title: "Lead-Generation Forms",
+        description:
+          "Simple, structured contact and consultation forms that make it easy to start a conversation.",
+      },
+      {
+        title: "Case Studies & Testimonials",
+        description:
+          "Showcase client results and testimonials to build trust with prospective clients.",
+      },
+    ],
+
+    project: {
+      title: "Summit Legal Group",
+      description:
+        "A trustworthy legal website that clearly presents practice areas, attorney expertise, and consultation options.",
+      href: "/portfolio/summit-legal",
+    },
+
+    faqs: [
+      {
+        question: "Do you work with service professionals outside of legal?",
+        answer:
+          "Yes. We work with consultants, accountants, agencies, and other professional service providers.",
+      },
+      {
+        question: "Can you help present my case studies or past results?",
+        answer:
+          "Yes. We can build dedicated case study or portfolio pages that highlight your work and outcomes.",
+      },
+      {
+        question: "Can you add a consultation request form?",
+        answer:
+          "Yes. We can build a structured consultation or inquiry form tailored to the information you need from prospective clients.",
+      },
+      {
+        question: "Can you help improve our visibility in search results?",
+        answer:
+          "Yes. We apply SEO best practices to service and location pages to help potential clients find your business.",
+      },
+    ],
+
+    ctaTitle: "Ready to Build a More Credible Online Presence?",
+    ctaDescription:
+      "Let’s create a website that reflects your expertise and turns visitors into qualified leads.",
   },
 ];
 
