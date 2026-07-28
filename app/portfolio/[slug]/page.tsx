@@ -1,5 +1,12 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import {
+  FileText,
+  AlertTriangle,
+  Lightbulb,
+  CheckCircle2,
+  Code2,
+} from "lucide-react";
 
 import { portfolioProjects } from "@/data/portfolioProjects";
 
@@ -105,32 +112,60 @@ export default async function PortfolioCaseStudyPage({
       <Section>
         <div className="case-study-content">
           <div className="case-study-block">
-            <h2>Project Overview</h2>
+            <div className="case-study-block-header">
+              <div className="case-study-block-icon">
+                <FileText size={20} strokeWidth={2} />
+              </div>
+              <h2>Project Overview</h2>
+            </div>
             <p>{project.overview}</p>
           </div>
 
           <div className="case-study-block">
-            <h2>The Challenge</h2>
+            <div className="case-study-block-header">
+              <div className="case-study-block-icon case-study-block-icon-warn">
+                <AlertTriangle size={20} strokeWidth={2} />
+              </div>
+              <h2>The Challenge</h2>
+            </div>
             <p>{project.challenge}</p>
           </div>
 
           <div className="case-study-block">
-            <h2>Our Solution</h2>
+            <div className="case-study-block-header">
+              <div className="case-study-block-icon">
+                <Lightbulb size={20} strokeWidth={2} />
+              </div>
+              <h2>Our Solution</h2>
+            </div>
             <p>{project.solution}</p>
           </div>
 
           <div className="case-study-block">
-            <h2>Key Results</h2>
+            <div className="case-study-block-header">
+              <div className="case-study-block-icon case-study-block-icon-success">
+                <CheckCircle2 size={20} strokeWidth={2} />
+              </div>
+              <h2>Key Results</h2>
+            </div>
 
             <ul>
               {project.results.map((result) => (
-                <li key={result}>{result}</li>
+                <li key={result}>
+                  <CheckCircle2 size={18} strokeWidth={2} />
+                  <span>{result}</span>
+                </li>
               ))}
             </ul>
           </div>
 
           <div className="case-study-block">
-            <h2>Technologies Used</h2>
+            <div className="case-study-block-header">
+              <div className="case-study-block-icon">
+                <Code2 size={20} strokeWidth={2} />
+              </div>
+              <h2>Technologies Used</h2>
+            </div>
 
             <div className="case-study-tags">
               {project.technologies.map((tech) => (
