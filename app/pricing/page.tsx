@@ -1,1 +1,65 @@
-import PageHero from "@/components/page-hero";export const metadata={title:"Flexible starting points with clear scope and expectations.",description:"Choose a practical foundation and expand only when additional functionality supports a real goal."};export default function Page(){return <><PageHero eyebrow="Pricing" title="Flexible starting points with clear scope and expectations." copy="Choose a practical foundation and expand only when additional functionality supports a real goal."/><section className="section"><div className="container"><div className="grid3">{[{n:"Starter",p:"Starting from $999",f:["Up to 5 pages","Responsive design","Contact form","Maps","Basic SEO","Analytics"]},{n:"Business",p:"Starting from $2,499",f:["Up to 12 pages","Blog/resources","Booking or advanced form","Enhanced SEO","Performance","Content assistance"]},{n:"Premium",p:"Custom Quote",f:["Custom UI/UX","E-commerce or booking","CRM","AI chatbot","Dashboard","Automation"]}].map(x=><div className="card" key={x.n}><h2>{x.n}</h2><h3>{x.p}</h3><ul>{x.f.map(y=><li key={y}>{y}</li>)}</ul><p><a className="btn btn-primary" href="/consultation">Discuss scope</a></p></div>)}</div><p className="muted">Pricing varies by content, complexity, integrations, and support requirements.</p></div></section></>}
+import { Check } from "lucide-react";
+
+import PageHero from "@/components/page-hero";
+import { pricingPlans } from "@/data/pricing";
+
+export const metadata = {
+  title: "Flexible starting points with clear scope and expectations.",
+  description:
+    "Choose a practical foundation and expand only when additional functionality supports a real goal.",
+};
+
+export default function Page() {
+  return (
+    <>
+      <PageHero
+        eyebrow="Pricing"
+        title="Flexible starting points with clear scope and expectations."
+        copy="Choose a practical foundation and expand only when additional functionality supports a real goal."
+      />
+
+      <section className="section pricing">
+        <div className="container">
+          <div className="pricing-grid">
+            {pricingPlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`pricing-card ${
+                  plan.popular ? "pricing-popular" : ""
+                }`}
+              >
+                {plan.popular && (
+                  <div className="popular-badge">Most Popular</div>
+                )}
+
+                <h3>{plan.name}</h3>
+
+                <div className="price">{plan.price}</div>
+
+                <p>{plan.description}</p>
+
+                <ul>
+                  {plan.features.map((feature) => (
+                    <li key={feature}>
+                      <Check size={18} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <a className="pricing-btn" href="/consultation">
+                  {plan.button}
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <p className="muted" style={{ marginTop: "2.5rem", textAlign: "center" }}>
+            Pricing varies by content, complexity, integrations, and support
+            requirements.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}

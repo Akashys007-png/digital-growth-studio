@@ -13,6 +13,9 @@
 @import "../styles/cta.css";
 @import "../styles/footer.css";
 @import "../styles/about.css";
+@import "../styles/contact.css";
+@import "../styles/resources.css";
+@import "../styles/services-page.css";
 
 :root {
   /* Brand Colors */

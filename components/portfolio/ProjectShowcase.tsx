@@ -2,7 +2,6 @@ import PortfolioPreview from "@/components/portfolio/PortfolioPreview";
 import Section from "@/components/ui/Section";
 import type { PortfolioProject } from "@/data/portfolioProjects";
 import BrowserMockup from "@/components/portfolio/BrowserMockup";
-import MobileMockup from "@/components/portfolio/MobileMockup";
 import CaseStudySectionHeader from "@/components/portfolio/CaseStudySectionHeader";
 
 interface ProjectShowcaseProps {
@@ -29,14 +28,6 @@ export default function ProjectShowcase({
               <PortfolioPreview type={project.previewType} />
             </div>
           </BrowserMockup>
-
-          <MobileMockup>
-            <div
-              className={`project-showcase-preview mobile ${project.className}`}
-            >
-              <PortfolioPreview type={project.previewType} />
-            </div>
-          </MobileMockup>
         </div>
       </div>
     </Section>

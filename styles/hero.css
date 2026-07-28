@@ -311,8 +311,8 @@
 }
 
 .floating-card-bottom {
-  bottom: 9%;
-  left: -10%;
+  bottom: -8%;
+  left: 6%;
 }
 
 @media (max-width: 1100px) {
