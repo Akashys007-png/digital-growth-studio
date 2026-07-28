@@ -16,7 +16,7 @@ export default function AboutCTA() {
         transition={{ duration: 0.6 }}
       >
         <span className="about-cta-badge">
-          It&apos;s Build Together
+          Let&apos;s Build Together
         </span>
 
         <h2>
