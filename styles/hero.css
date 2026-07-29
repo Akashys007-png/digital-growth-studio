@@ -38,6 +38,18 @@
   background: rgba(15, 157, 138, 0.08);
 }
 
+.dark .hero-section {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(96, 165, 250, 0.14), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(15, 157, 138, 0.14), transparent 30%),
+    linear-gradient(180deg, #0b1220 0%, #0b1220 100%);
+}
+
+.dark .hero-badge {
+  background: rgba(20, 27, 45, 0.82);
+  border-color: rgba(96, 165, 250, 0.25);
+}
+
 .hero-container {
   position: relative;
   z-index: 2;
